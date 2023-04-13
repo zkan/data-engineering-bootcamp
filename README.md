@@ -35,4 +35,4 @@ Skooldio](https://landing.skooldio.com/data-engineering-bootcamp)
 
 ## Guidelines
 
-เรื่องพื้นฐานที่ควรรู้ต่าง ๆ สามารถอ่านเพิ่มเติมได้ที่เอกสาร [Guidelines](guidelines.md)
+เรื่องพื้นฐานที่ควรรู้ต่าง ๆ สามารถอ่านเพิ่มเติมได้ที่เอกสาร [Guidelines](./GUIDELINES.md)
