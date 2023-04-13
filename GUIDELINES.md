@@ -2,10 +2,141 @@
 
 ### Table of Contents
 
+#### About Programming
+
+* [Python Basics](#python-basics)
+* [Common Unix Commands](#common-unix-commands)
+* [Git & GitHub Basics](#git--github-basics)
+* [Docker Basics](#docker-basics)
+
+#### About Google Cloud Platform (GCP)
+
 * [How to Register For Google Cloud Platform (GCP) Account](#how-to-register-for-google-cloud-platform-gcp-account)
 * [How to Create a GCP Project](#how-to-create-a-gcp-project)
 * [How to Use Google BigQuery](#how-to-use-google-bigquery)
 * [How to Use Google Cloud Storage (GCS)](#how-to-use-google-cloud-storage-gcs)
+
+## Python Basics
+
+### Setting Up a Python Virtual Environment 
+
+#### Using venv
+
+ก่อนที่เราจะเริ่มโปรเจค Python ใด ๆ ก็ตาม เราควรที่จะมี environment ที่เหมาะสม เพื่อเอาไว้จัดการพวก libraries หรือ packages ต่าง ๆ ก่อน และ environment ที่พูดถึงนี้ในภาษา Python เราจะเรียกว่า "Python virtual environment"
+
+ดังนั้นในขั้นตอนนี้เราจะสร้าง Python virtual environment กันก่อน โดยใช้คำสั่ง
+
+```bash
+python -m venv ENV
+```
+
+คำสั่งด้านบน แปลความได้ว่า เราจะใช้ Python module ที่ชื่อ `venv` สร้าง Python virtual environment ที่ชื่อว่า `ENV` ขึ้นมา โดยผลลัพธ์ที่ได้จากขั้นตอนนี้ เราจะเห็นว่ามีโฟลเดอร์ `ENV` เกิดขึ้น และข้างในโฟลเดอร์นี้จะมีของต่าง ๆ เกี่ยวกับ Python ซึ่งในโฟลเดอร์พวกนี้แหละ จะเป็นที่เก็บ libraries หรือ packages ที่เราติดตั้ง
+
+หลังจากที่เรามี Python virtual environment แล้ว เราจะต้อง activate ก่อน ถึงจะสามารถใช้งานได้ เราจะใช้คำสั่ง
+
+```bash
+source ENV/bin/activate
+```
+
+ถ้าเป็นเครื่อง Windows เราจะใช้คำสั่ง
+
+```bash
+ENV\Scripts\activate
+```
+
+สังเกตผลลัพธ์ที่ได้ทางซ้ายมือของ shell หรือ command line ของเราจะมีวงเล็บ `(ENV)` เป็นชื่อ environment หรือชื่อ folder ที่เราสร้างขึ้น
+
+##### Installing Python Packages
+
+หลังจากที่เราอยู่ใน virtual environment นั้นแล้ว เราสามารถที่จะติดตั้ง Python package ต่าง ๆ เพิ่มเติมได้ โดยใช้คำสั่ง
+
+```bash
+pip install <python_package_name>
+```
+
+หรือถ้ามีรายการ package ที่ต้องติดตั้งเก็บอยู่ที่ไฟล์ `requirements.txt` เราก็สามารถสั่งคำสั่งด้านล่างนี้ได้เลย จะเป็นการติดตั้ง package ทั้งหมด
+
+```bash
+pip install -r requirements.txt
+```
+
+#### Using Poetry
+
+นอกจาก venv แล้ว เรายังสามารถใช้ [Poetry](https://python-poetry.org/) ในการจัดการ Python package dependencies ได้เช่นกัน
+
+##### Installing Python Packages
+
+เราสามารถใช้คำสั่งด้านล่างนี้ในการติดตั้ง package
+
+```bash
+poetry add <python_package_name>
+```
+
+ในการใช้ Poetry เราจะมีไฟล์ `pyproject.toml` อยู่ ซึ่งในไฟล์นี้จะเก็บรายการ package ต่าง ๆ ที่เราติดตั้งไว้ ถ้าเรามีไฟล์นี้อยู่แล้ว เราสามารถสั่งคำสั่งด้านล่างนี้ได้เลย เพื่อติดตั้ง package ทั้งหมด
+
+```bash
+poetry install
+```
+
+## Common Unix Commands
+
+| Description | Command | Example |
+| - | - | - |
+| List contents | ls | `$ ls -l` |
+| Make directory | mkdir &lt;dirname&gt; | `$ mkdir environment` |
+| Change directory | cd &lt;dirname&gt; | `$ cd environment/` |
+| Change one directory up | | `$ cd ..` |
+| Change to home directory | | `$ cd ~ or just $ cd` |
+| Change to path including home directory | | `$ cd ~/environment/` |
+| Move file (rename) | mv &lt;source&gt; &lt;target&gt; | `$ mv foo bar` |
+| Copy file | cp &lt;source&gt; &lt;target&gt; | `$ cp foo bar` |
+| Remove file | rm &lt;file&gt; | `$ rm foo` |
+| Remove empty directory | rmdir &lt;directory&gt; | `$ rmdir environment/` |
+| Remove nonempty directory | rm -rf &lt;directory&gt; | `$ rm -rf tmp/` |
+| Concatenate & display file contents | cat &lt;file&gt; | `$ cat ~/.ssh/id_rsa.pub` |
+
+### References
+
+- [What is Command Line Interface (CLI)?](https://www.w3schools.com/whatis/whatis_cli.asp)
+- [Command Line Commands – CLI Tutorial](https://www.freecodecamp.org/news/command-line-commands-cli-tutorial/)
+- [Learn the Command Line](https://www.codecademy.com/learn/learn-the-command-line)
+
+## Git & GitHub Basics
+
+| Description | Command | Example |
+| - | - | - |
+| Create an empty Git repository or reinitialize an existing one | init | `$ git init` |
+| Clone a repository into a new director | clone | `$ git clone` |
+| Show the working tree status | status | `$ git status` |
+| Show changes between commits, commit and working tree, etc. | diff | `$ git diff` |
+| Add file contents to the index | add &lt;pathspec&gt; | `$ git add` |
+| Record changes to the repository | commit | `$ git commit` |
+| Fetch from and integrate with another repository or a local branch | pull | `$ git pull` |
+| Update remote refs along with associated objects | push | `$ git push` |
+
+### References
+
+- [Git Tutorial](https://www.w3schools.com/git/)
+- [Introduction to Git](https://www.datacamp.com/courses/introduction-to-git)
+- [An open source game about learning Git!](https://ohmygit.org/)
+- [Learn Git Branching](https://learngitbranching.js.org/)
+- [Learn Git & GitHub](https://www.codecademy.com/learn/learn-git)
+- [GitHub Skills](https://skills.github.com/)
+- [Getting started with GitHub documentation](https://docs.github.com/en/get-started)
+
+## Docker Basics
+
+### Docker Desktop
+
+ในกรณีที่ใช้เครื่องตัวเอง สามารถใช้โปรแกรม Docker เพื่อรัน applications ขึ้นมาได้ โดยไม่ต้องสนใจเรื่องของการเซตอัพ infrastructure หรือ package ต่าง ๆ
+
+- Mac - [https://docs.docker.com/desktop/install/mac-install/](https://docs.docker.com/desktop/install/mac-install/)
+- Linux - [https://docs.docker.com/desktop/install/linux-install/](https://docs.docker.com/desktop/install/linux-install/)
+- Windows - [https://docs.docker.com/desktop/install/windows-install/](https://docs.docker.com/desktop/install/windows-install/)
+
+### References
+
+- [A Docker Tutorial for Beginners](https://docker-curriculum.com/)
 
 ## How to Register For Google Cloud Platform (GCP) Account
 
