@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  sftp:
+    image: atmoz/sftp:latest
+    volumes:
+    - ./data:/home/greenery
+    ports:
+    - "2222:22"
+    command: greenery:hardpassword:1001
