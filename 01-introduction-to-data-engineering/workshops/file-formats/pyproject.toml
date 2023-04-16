@@ -6,6 +6,12 @@ authors = ["zkan <zkan.cs@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pandas = "^1.5.3"
+jupyter = "^1.0.0"
+pyarrow = "^11.0.0"
+avro = "^1.11.1"
+lxml = "^4.9.2"
+parquet-tools = "^0.2.13"
 
 [tool.poetry.dev-dependencies]
 
