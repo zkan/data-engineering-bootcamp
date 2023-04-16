@@ -1,0 +1,23 @@
+[
+    {
+        "name": "promo_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "discount",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "status",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    }
+]

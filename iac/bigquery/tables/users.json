@@ -1,0 +1,58 @@
+[
+    {
+        "name": "user_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "first_name",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "last_name",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "email",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "phone_number",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "created_at",
+        "mode": "NULLABLE",
+        "type": "TIMESTAMP",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "updated_at",
+        "mode": "NULLABLE",
+        "type": "TIMESTAMP",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "address_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    }
+]

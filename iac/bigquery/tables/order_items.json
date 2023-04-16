@@ -1,0 +1,23 @@
+[
+    {
+        "name": "order_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "product_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "quantity",
+        "mode": "NULLABLE",
+        "type": "INTEGER",
+        "description": null,
+        "fields": []
+    }
+]

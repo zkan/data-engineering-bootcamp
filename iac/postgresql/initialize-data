@@ -1,0 +1,22 @@
+#!/bin/bash
+
+read -s -p '🔑 Password for user "postgres": ' PGPASSWORD
+echo ""
+
+PGHOST=$(terraform output -raw public_ip_address)
+PGUSER="postgres"
+PGDATABASE="greenery"
+PGPORT="5432"
+
+for file in data/*.csv
+do
+    table_name=$(basename "$file" .csv)
+
+    echo "🚀 Creating the \"$table_name\" table..."
+
+    PGPASSWORD=$PGPASSWORD psql -h $PGHOST -p $PGPORT -U $PGUSER -d $PGDATABASE \
+        -c "DROP TABLE IF EXISTS $table_name; CREATE TABLE $table_name ($(head -n 1 $file | sed 's/,/ TEXT,/g;s/$/ TEXT/'));"
+
+    PGPASSWORD=$PGPASSWORD psql -h $PGHOST -p $PGPORT -U $PGUSER -d $PGDATABASE \
+        -c "\copy $table_name FROM '$file' DELIMITER ',' CSV HEADER;"
+done

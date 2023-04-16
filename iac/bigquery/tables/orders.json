@@ -1,0 +1,93 @@
+[
+    {
+        "name": "order_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "user_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "promo_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "address_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "created_at",
+        "mode": "NULLABLE",
+        "type": "TIMESTAMP",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "order_cost",
+        "mode": "NULLABLE",
+        "type": "FLOAT",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "shipping_cost",
+        "mode": "NULLABLE",
+        "type": "FLOAT",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "order_total",
+        "mode": "NULLABLE",
+        "type": "FLOAT",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "tracking_id",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "shipping_service",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "estimated_delivery_at",
+        "mode": "NULLABLE",
+        "type": "TIMESTAMP",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "delivered_at",
+        "mode": "NULLABLE",
+        "type": "TIMESTAMP",
+        "description": null,
+        "fields": []
+    },
+    {
+        "name": "status",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": null,
+        "fields": []
+    }
+]
