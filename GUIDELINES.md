@@ -62,7 +62,7 @@ pip install -r requirements.txt
 
 #### Using Poetry
 
-นอกจาก venv แล้ว เรายังสามารถใช้ [Poetry](https://python-poetry.org/) ในการจัดการ Python package dependencies ได้เช่นกัน
+นอกจาก `venv` แล้ว เรายังสามารถใช้ [Poetry](https://python-poetry.org/) ในการจัดการ Python package dependencies ได้เช่นกัน
 
 ##### Installing Python Packages
 
