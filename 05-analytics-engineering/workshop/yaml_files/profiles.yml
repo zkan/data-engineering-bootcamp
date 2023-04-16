@@ -1,0 +1,32 @@
+greenery:
+  outputs:
+    dbt_zkan:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: "{{ env_var('DBT_ENV_SECRET_PG_PASSWORD') }}"
+      dbname: greenery
+      schema: dbt_zkan
+
+    prod:
+      type: postgres
+      threads: 1
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: "{{ env_var('DBT_ENV_SECRET_PG_PASSWORD') }}"
+      dbname: greenery
+      schema: prod
+
+    prod_bigquery:
+      type: bigquery
+      method: service-account
+      project: dataengineercafe
+      dataset: greenery
+      threads: 1
+      keyfile: /Users/zkan/.dbt/your-gcp-credential-file.json
+      location: asia-southeast1
+
+  target: dbt_zkan

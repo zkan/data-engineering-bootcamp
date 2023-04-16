@@ -1,0 +1,76 @@
+Table users {
+  user_id varchar [pk]
+  first_name varchar
+  email varchar
+  phone_number varchar
+  created_at timestamp
+  updated_at timestamp
+  address_id varchar
+}
+
+Table addresses {
+  address_id varchar [pk]
+  address varchar
+  zipcode int
+  state varchar
+  country varchar
+}
+
+Table events {
+  event_id varchar [pk]
+  session_id varchar
+  user_id varchar
+  event_type varchar
+  page_url varchar
+  created_at timestamp
+  order_id varchar
+  product_id varchar
+}
+
+Table orders {
+  order_id varchar [pk]
+  promo_id varchar
+  user_id varchar
+  address_id varchar
+  created_at timestamp
+  order_cost float
+  shipping_cost float
+  order_total float
+  tracking_id varchar
+  shipping_service varchar
+  estimated_delivery_at timestamp
+  delivered_at timestamp
+  status varchar
+}
+
+Table products {
+  product_id varchar [pk]
+  name varchar
+  price float
+  inventory int
+}
+
+Table order_items {
+  order_id varchar [pk]
+  product_id varchar [pk]
+  quantity int
+}
+
+Table promos {
+  promo_id varchar [pk]
+  discount int
+  status varchar
+}
+
+Ref: users.address_id > addresses.address_id
+
+Ref: events.user_id > users.user_id
+Ref: events.product_id > products.product_id
+Ref: events.order_id > orders.order_id
+
+Ref: orders.user_id > users.user_id
+Ref: orders.address_id > addresses.address_id
+Ref: orders.promo_id > promos.promo_id
+
+Ref: order_items.product_id > products.product_id
+Ref: order_items.order_id > orders.order_id

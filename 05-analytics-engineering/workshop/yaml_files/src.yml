@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: greenery
+    schema: public
+    database: greenery
+
+    tables:
+      - name: users
+        description: Greenery users

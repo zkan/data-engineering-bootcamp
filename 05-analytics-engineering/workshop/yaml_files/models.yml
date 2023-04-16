@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: users
+    description: Greenery users
+    columns:
+      - name: user_id
+        description: User ID
