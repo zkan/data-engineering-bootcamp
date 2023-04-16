@@ -3,7 +3,7 @@ import pandas as pd
 print("### CSV ###")
 df_csv = pd.read_csv("homes.csv")
 df_csv.columns = ["Sell", "List", "Living", "Rooms", "Beds", "Baths", "Age", "Acres", "Taxes"]
-df_csv.head()
+print(df_csv.head())
 
 print("### JSON ###")
 import json
@@ -11,20 +11,20 @@ import json
 
 df_csv.to_json("homes.json")
 df_json = pd.read_json("homes.json")
-df_json.head()
+print(df_json.head())
 
 # Ref: http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.json_normalize.html
 with open("widgets.json") as data_file:    
     data = json.load(data_file)
     
 df_widgets_json = pd.json_normalize(data)
-df_widgets_json.head()
+print(df_widgets_json.head())
 
 # Parquet
 print("### Parquet ###")
 df_csv.to_parquet("homes.parquet")
 df_pq = pd.read_parquet("homes.parquet")
-df_pq.head()
+print(df_pq.head())
 
 ## CLI: parquet-tools inspect --detail homes.parquet
 
@@ -58,7 +58,7 @@ reader.close()
 print("### ORC ###")
 df_csv.to_orc("homes.orc")
 df_orc = pd.read_orc("homes.orc")
-df_orc.head()
+print(df_orc.head())
 
 
 import pyarrow.orc as orc
@@ -71,6 +71,6 @@ print(data.to_pydict())
 
 print("### XML ###")
 df_xml = pd.read_xml("coordinates.xml")
-df_xml.head()
+print(df_xml.head())
 
 df_xml.to_xml("coordinates_new.xml", index=None)
