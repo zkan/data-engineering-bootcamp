@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "file-formats"
+name = "different-file-formats"
 version = "0.1.0"
 description = ""
 authors = ["zkan <zkan.cs@gmail.com>"]
