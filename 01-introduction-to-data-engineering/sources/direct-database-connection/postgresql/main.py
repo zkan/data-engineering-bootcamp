@@ -15,26 +15,26 @@ port = parser.get("postgres_config", "port")
 
 conn_str = f"dbname={dbname} user={user} password={password} host={host} port={port}"
 conn = psycopg2.connect(conn_str)
+cursor = conn.cursor()
 
-today = datetime.date(2021, 2, 11)
-
+print("### Extraction by Specific Date ###")
 tables = [
-    "events",
-    "orders",
-    "users",
+    ("events", datetime.date(2021, 2, 10)),
+    ("orders", datetime.date(2021, 2, 10)),
+    ("users", datetime.date(2020, 5, 4)),
 ]
-for table in tables:
-    query = f"SELECT * FROM {table} WHERE date(created_at) = '{today}'"
-    cursor = conn.cursor()
+for table, dt in tables:
+    query = f"select * from {table} where date(created_at) = '{dt}' limit 3"
+    print(query)
     cursor.execute(query)
 
     results = cursor.fetchall()
     for each in results:
         print(each)
 
-    print("-" * 15)
+    print("-" * 5)
 
-
+print("### Full Extraction ###")
 """
 When table has no primary key and date, we can calculate the difference between
 source and the destination
@@ -47,7 +47,6 @@ select * from order_items where product_id = 'e18f33a6-b89a-4fbc-82ad-ccba5bb261
 except
 select * from destination order by quantity;
 """
-
 tables = [
     "addresses",
     "order_items",
@@ -55,12 +54,35 @@ tables = [
     "promos",
 ]
 for table in tables:
-    query = f"SELECT * FROM {table}"
-    cursor = conn.cursor()
+    query = f"select * from {table} limit 3"
+    print(query)
     cursor.execute(query)
 
     results = cursor.fetchall()
     for each in results:
         print(each)
 
-    print("-" * 15)
+    print("-" * 5)
+
+print("### Incremental Extraction ###")
+"""
+The last_extraction_run is a timestamp representing the most recent run of the
+extraction job. The value can be retrieved from the following SQL executed in a
+data warehouse:
+
+select max(last_updated) from warehouse.orders
+"""
+dt = datetime.datetime(2021, 2, 11, 14, 23, 40, 656219)
+last_extraction_run = dt
+query = f"select * from orders where created_at > '{last_extraction_run}' limit 3"
+print(query)
+cursor.execute(query)
+
+results = cursor.fetchall()
+for each in results:
+    print(each)
+
+print("-" * 5)
+
+cursor.close()
+conn.close()
