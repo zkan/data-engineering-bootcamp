@@ -13,6 +13,7 @@
 
 * [How to Register For Google Cloud Platform (GCP) Account](#how-to-register-for-google-cloud-platform-gcp-account)
 * [How to Create a GCP Project](#how-to-create-a-gcp-project)
+* [How to Create Service Account](#how-to-create-service-account)
 * [How to Use Google BigQuery](#how-to-use-google-bigquery)
 * [How to Use Google Cloud Storage (GCS)](#how-to-use-google-cloud-storage-gcs)
 
@@ -188,6 +189,46 @@ poetry install
 ![Set up a GCP Project](./docs/img/gcp-setup-new-project.png)
 
 เสร็จแล้วกดปุ่ม CREATE ก็เป็นอันเสร็จเรียบร้อย
+
+# How to Create Service Account
+
+ในการใช้งาน resources ต่างๆ ของ google clound ผ่าน api เราต้องสร้าง credential ในการทำ authentication 
+
+วิธีในการสร้างให้เข้าไปที่เมนู IAM & Admin (เลข 2) > Service Accounts (เลข 3)
+
+![create service account](./docs/img/gcp-svc-console.png)
+
+หลังจากนั้นกดเมนู **CREATE SERVICE ACCOUNT** ตามรูป
+
+![create service account page](./docs/img/gcp-svc-service-account-page-before.png)
+
+ตั้งชื่อให้กับ service account แล้วกด **CREATE AND CONTINUE**
+
+![create service account step 1](./docs/img/gcp-svc-create-service-account-step1.png)
+
+กำหนก Role ให้กับ service account 
+
+![create service account step 2](./docs/img/gcp-svc-create-service-account-step2.png)
+
+เสร็จแล้วกดปุ่ม DONE จะได้ service account 
+
+ต่อไปเป็นการสร้าง credential ให้กับ service account ที่สร้างมา กดตรงชื่อของ servive account 
+
+![finish create service account](./docs/img/gcp-svc-service-account-page-after.png)
+
+กดปุ่ม **KEYS** ตามรูป
+
+![create credential for service account](./docs/img/gcp-svc-create-credential-page.png)
+
+กดปุ่ม ADD KEY > Create new key
+
+![create credential for service account](./docs/img/gcp-svc-create-credential-add-key.png)
+
+เลือก key type เป็น json กด ปุ่ม CREATE
+
+![create credential for service account](./docs/img/gcp-svc-create-credential-add-key-json.png)
+
+browser จะโหลด credentail อัตโนมัติก็จะเสร็จเรียบร้อย
 
 ## How to Use Google BigQuery
 
