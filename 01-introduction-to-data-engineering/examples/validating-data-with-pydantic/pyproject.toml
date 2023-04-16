@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "data-validation-with-pydantic"
+name = "validating-data-with-pydantic"
 version = "0.1.0"
 description = ""
 authors = ["zkan <zkan.cs@gmail.com>"]
