@@ -2,7 +2,9 @@ import csv
 import configparser
 import datetime
 
+import pandas as pd
 import psycopg2
+from sqlalchemy import create_engine
 
 
 parser = configparser.ConfigParser()
@@ -63,6 +65,12 @@ for table in tables:
         print(each)
 
     print("-" * 5)
+
+
+print("#### Full Extraction using Pandas ###")
+engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{dbname}")
+df = pd.read_sql("select * from orders", engine)
+print(df.head(3))
 
 print("### Incremental Extraction ###")
 """
