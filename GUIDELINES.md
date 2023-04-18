@@ -19,7 +19,7 @@
 
 ## Python Basics
 
-### Setting Up a Python Virtual Environment 
+### Setting Up a Python Virtual Environment
 
 #### Using venv
 
@@ -138,6 +138,7 @@ poetry install
 ### References
 
 - [A Docker Tutorial for Beginners](https://docker-curriculum.com/)
+- [The Ultimate Docker Cheat Sheet](https://dockerlabs.collabnix.com/docker/cheatsheet/)
 
 ## How to Register For Google Cloud Platform (GCP) Account
 
@@ -192,7 +193,7 @@ poetry install
 
 # How to Create Service Account
 
-ในการใช้งาน resources ต่างๆ ของ google clound ผ่าน api เราต้องสร้าง credential ในการทำ authentication 
+ในการใช้งาน resources ต่างๆ ของ google clound ผ่าน api เราต้องสร้าง credential ในการทำ authentication
 
 วิธีในการสร้างให้เข้าไปที่เมนู IAM & Admin (เลข 2) > Service Accounts (เลข 3)
 
@@ -206,13 +207,13 @@ poetry install
 
 ![create service account step 1](./docs/img/gcp-svc-create-service-account-step1.png)
 
-กำหนก Role ให้กับ service account 
+กำหนก Role ให้กับ service account
 
 ![create service account step 2](./docs/img/gcp-svc-create-service-account-step2.png)
 
-เสร็จแล้วกดปุ่ม DONE จะได้ service account 
+เสร็จแล้วกดปุ่ม DONE จะได้ service account
 
-ต่อไปเป็นการสร้าง credential ให้กับ service account ที่สร้างมา กดตรงชื่อของ servive account 
+ต่อไปเป็นการสร้าง credential ให้กับ service account ที่สร้างมา กดตรงชื่อของ servive account
 
 ![finish create service account](./docs/img/gcp-svc-service-account-page-after.png)
 
