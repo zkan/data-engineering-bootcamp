@@ -9,7 +9,17 @@ from avro.io import DatumReader, DatumWriter
 
 print("### CSV ###")
 df_csv = pd.read_csv("homes.csv")
-df_csv.columns = ["Sell", "List", "Living", "Rooms", "Beds", "Baths", "Age", "Acres", "Taxes"]
+df_csv.columns = [
+    "Sell",
+    "List",
+    "Living",
+    "Rooms",
+    "Beds",
+    "Baths",
+    "Age",
+    "Acres",
+    "Taxes",
+]
 print(df_csv.head())
 
 print("### JSON ###")
