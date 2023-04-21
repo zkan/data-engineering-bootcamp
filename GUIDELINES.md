@@ -213,7 +213,7 @@ poetry install
 
 เสร็จแล้วกดปุ่ม DONE จะได้ service account
 
-ต่อไปเป็นการสร้าง credential ให้กับ service account ที่สร้างมา กดตรงชื่อของ servive account
+ต่อไปเป็นการสร้าง credential ให้กับ service account ที่สร้างมา กดตรงชื่อของ service account
 
 ![finish create service account](./docs/img/gcp-svc-service-account-page-after.png)
 
@@ -225,11 +225,11 @@ poetry install
 
 ![create credential for service account](./docs/img/gcp-svc-create-credential-add-key.png)
 
-เลือก key type เป็น json กด ปุ่ม CREATE
+เลือก key type เป็น JSON แล้วกดปุ่ม CREATE
 
 ![create credential for service account](./docs/img/gcp-svc-create-credential-add-key-json.png)
 
-browser จะโหลด credential อัตโนมัติก็จะเสร็จเรียบร้อย
+ฺฺฺBrowser จะโหลด credential ให้อัตโนมัติก็จะเสร็จเรียบร้อย
 
 ## How to Use Google BigQuery
 
