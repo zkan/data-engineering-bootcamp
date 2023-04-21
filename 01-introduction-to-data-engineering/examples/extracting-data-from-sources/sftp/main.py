@@ -17,4 +17,4 @@ cnopts = pysftp.CnOpts()
 cnopts.hostkeys = None
 with pysftp.Connection(host, username=username, password=password, port=port, cnopts=cnopts) as sftp:
     sftp.get("promos.csv")
-    sftp.put("some.txt", "uploaded.txt")
+    # sftp.put("some.txt", "uploaded.txt")
