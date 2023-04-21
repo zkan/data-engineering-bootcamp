@@ -5,7 +5,7 @@ description = ""
 authors = ["zkan <zkan.cs@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 pysftp = "^0.2.9"
 
 [tool.poetry.dev-dependencies]
