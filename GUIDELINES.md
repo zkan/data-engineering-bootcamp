@@ -157,7 +157,7 @@ poetry install
     ### Step 1/2
 
     1. เลือก Country : Thailand
-    1. เลือก What the best descripes you organization or need : Other
+    1. เลือก What the best describes you organization or need : Other
     1. เลือก Term of Service
     1. คลิกปุ่ม CONTINUE
 
