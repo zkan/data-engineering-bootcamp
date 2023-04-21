@@ -2,14 +2,6 @@
 
 This Terraform project sets up a PostgreSQL database instance on Google Cloud SQL along with a database.
 
-## Prerequisites
-
-Before running the Terraform project, ensure you have:
-
-- A Google Cloud Platform (GCP) account and project.
-- A billing account linked to the project.
-- Terraform CLI installed.
-
 ## Setting up
 
 1. Set up GCP authentication.
