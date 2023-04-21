@@ -15,6 +15,14 @@ port = parser.getint("sftp_config", "port")
 # You lose a protection against Man-in-the-middle attacks
 cnopts = pysftp.CnOpts()
 cnopts.hostkeys = None
+
+files = [
+    "promos.csv",
+    "products.csv",
+]
 with pysftp.Connection(host, username=username, password=password, port=port, cnopts=cnopts) as sftp:
-    sftp.get("promos.csv")
+    for f in files:
+        sftp.get(f)
+        print(f"Finished downloading: {f}")
+
     # sftp.put("some.txt", "uploaded.txt")
