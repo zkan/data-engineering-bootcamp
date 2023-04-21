@@ -229,7 +229,7 @@ poetry install
 
 ![create credential for service account](./docs/img/gcp-svc-create-credential-add-key-json.png)
 
-browser จะโหลด credentail อัตโนมัติก็จะเสร็จเรียบร้อย
+browser จะโหลด credential อัตโนมัติก็จะเสร็จเรียบร้อย
 
 ## How to Use Google BigQuery
 
