@@ -3,3 +3,7 @@
 
 # VIM
 *.swp
+
+# env
+env
+de-lifecycle

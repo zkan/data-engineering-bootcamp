@@ -1,0 +1,3 @@
+curl -XPOST -H "Content-type: application/json" -d '{ "key": "value" }' 'https://getpantry.cloud/apiv1/pantry/fe55d353-0c87-4f5c-9e59-a413dd08fe88/basket/testBasket'
+
+fe55d353-0c87-4f5c-9e59-a413dd08fe88
