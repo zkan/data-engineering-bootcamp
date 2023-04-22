@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "bootcamp-project"
+version = "0.1.0"
+description = ""
+authors = ["Isaman sangbumrung  <38631981+tao-Isaman@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "bootcamp_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
