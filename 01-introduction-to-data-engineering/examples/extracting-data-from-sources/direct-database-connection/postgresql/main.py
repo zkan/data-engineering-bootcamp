@@ -3,8 +3,8 @@ import configparser
 import datetime
 
 import pandas as pd
-import psycopg2
-from sqlalchemy import create_engine
+import psycopg2 ##library for pulling data from postgres
+from sqlalchemy import create_engine 
 
 
 parser = configparser.ConfigParser()
@@ -26,6 +26,7 @@ tables = [
     ("users", datetime.date(2020, 5, 4)),
 ]
 for table, dt in tables:
+    #put your query here
     query = f"select * from {table} where date(created_at) = '{dt}' limit 3"
     print(query)
     cursor.execute(query)
@@ -66,12 +67,13 @@ for table in tables:
 
     print("-" * 5)
 
-
+# 2.
 print("#### Full Extraction using Pandas ###")
 engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{dbname}")
 df = pd.read_sql("select * from orders", engine)
 print(df.head(3))
 
+# 3.
 print("### Incremental Extraction ###")
 """
 The last_extraction_run is a timestamp representing the most recent run of the
