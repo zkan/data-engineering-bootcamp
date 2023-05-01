@@ -10,7 +10,6 @@ URL = "https://www.one2car.com/%E0%B8%A3%E0%B8%96%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%
 class MySpider(scrapy.Spider):
     name = "one2car_spider"
     start_urls = [URL,]
-    start = 0
 
     def parse(self, response):
         listing = response.css("article.listing")
