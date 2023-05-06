@@ -180,3 +180,6 @@ pyrightconfig.json
 
 # VIM
 *.swp
+
+# DEB Workshop
+de-lifecycle
