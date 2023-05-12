@@ -95,6 +95,7 @@ poetry install
 | Remove empty directory | rmdir &lt;directory&gt; | `$ rmdir environment/` |
 | Remove nonempty directory | rm -rf &lt;directory&gt; | `$ rm -rf tmp/` |
 | Concatenate & display file contents | cat &lt;file&gt; | `$ cat ~/.ssh/id_rsa.pub` |
+| Shorten command line prompt | | `export PROMPT_DIRTRIM=1` |
 
 ### References
 
