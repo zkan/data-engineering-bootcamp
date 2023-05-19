@@ -1,8 +1,15 @@
 version: 2
 
 models:
-  - name: users
+
+  - name: my_users
     description: Greenery users
     columns:
       - name: user_id
         description: User ID
+
+  - name: my_events
+    description: Greenery events
+    columns:
+      - name: event_id
+        description: Event ID

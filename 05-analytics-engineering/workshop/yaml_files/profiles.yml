@@ -1,4 +1,5 @@
 greenery:
+
   outputs:
     dbt_zkan:
       type: postgres
@@ -20,13 +21,22 @@ greenery:
       dbname: greenery
       schema: prod
 
+    dbt_zkan_bigquery:
+      type: bigquery
+      method: service-account
+      project: dataengineercafe
+      dataset: dbt_zkan
+      threads: 1
+      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/YOUR-KEYFILE.json
+      location: asia-southeast1
+
     prod_bigquery:
       type: bigquery
       method: service-account
       project: dataengineercafe
-      dataset: greenery
+      dataset: deb_bootcamp
       threads: 1
-      keyfile: /Users/zkan/.dbt/your-gcp-credential-file.json
+      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/YOUR-KEYFILE.json
       location: asia-southeast1
 
-  target: dbt_zkan
+  target: dbt_zkan_bigquery
