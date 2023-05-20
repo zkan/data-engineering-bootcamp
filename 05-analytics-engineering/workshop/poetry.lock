@@ -21,19 +21,18 @@ test = ["coverage (>=3.7.1)", "cssselect (>=0.9.1)", "lxml (>=3.6.0)", "nose (>=
 
 [[package]]
 name = "attrs"
-version = "22.2.0"
+version = "23.1.0"
 description = "Classes Without Boilerplate"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.extras]
-cov = ["attrs", "coverage-enable-subprocess", "coverage[toml] (>=5.3)"]
-dev = ["attrs"]
-docs = ["furo", "sphinx", "myst-parser", "zope.interface", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier"]
-tests = ["attrs", "zope.interface"]
-tests-no-zope = ["hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-xdist", "cloudpickle", "mypy (>=0.971,<0.990)", "pytest-mypy-plugins"]
-tests_no_zope = ["hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-xdist", "cloudpickle", "mypy (>=0.971,<0.990)", "pytest-mypy-plugins"]
+cov = ["attrs", "coverage[toml] (>=5.3)"]
+dev = ["attrs", "pre-commit"]
+docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier", "zope-interface"]
+tests = ["attrs", "zope-interface"]
+tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pytest-mypy-plugins", "pytest-xdist", "pytest (>=4.3.0)"]
 
 [[package]]
 name = "babel"
@@ -42,21 +41,6 @@ description = "Internationalization utilities"
 category = "main"
 optional = false
 python-versions = ">=3.7"
-
-[[package]]
-name = "betterproto"
-version = "1.2.5"
-description = "A better Protobuf / gRPC generator & library"
-category = "main"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-grpclib = "*"
-stringcase = "*"
-
-[package.extras]
-compiler = ["black", "jinja2", "protobuf"]
 
 [[package]]
 name = "cachetools"
@@ -114,7 +98,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7
 
 [[package]]
 name = "dbt-bigquery"
-version = "1.4.3"
+version = "1.5.0"
 description = "The Bigquery adapter plugin for dbt"
 category = "main"
 optional = false
@@ -122,14 +106,14 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 agate = ">=1.6.3,<1.7.0"
-dbt-core = ">=1.4.0,<1.5.0"
+dbt-core = ">=1.5.0,<1.6.0"
 google-cloud-bigquery = ">=3.0,<4.0"
 google-cloud-dataproc = ">=5.0,<6.0"
 google-cloud-storage = ">=2.4,<3.0"
 
 [[package]]
 name = "dbt-core"
-version = "1.4.5"
+version = "1.5.0"
 description = "With dbt, data analysts and engineers can build analytics the way engineers build applications."
 category = "main"
 optional = false
@@ -137,25 +121,25 @@ python-versions = ">=3.7.2"
 
 [package.dependencies]
 agate = ">=1.6,<1.7.1"
-betterproto = "1.2.5"
 cffi = ">=1.9,<2.0.0"
 click = ">=7.0,<9"
 colorama = ">=0.3.9,<0.4.7"
 dbt-extractor = ">=0.4.1,<0.5.0"
-hologram = ">=0.0.14,<=0.0.15"
+hologram = ">=0.0.14,<=0.0.16"
 idna = ">=2.5,<4"
 isodate = ">=0.6,<0.7"
 Jinja2 = "3.1.2"
 logbook = ">=1.5,<1.6"
-mashumaro = {version = "3.3.1", extras = ["msgpack"]}
+mashumaro = {version = "3.6", extras = ["msgpack"]}
 minimal-snowplow-tracker = "0.0.2"
 networkx = {version = ">=2.3,<3", markers = "python_version >= \"3.8\""}
 packaging = ">20.9"
-pathspec = ">=0.9,<0.11"
+pathspec = ">=0.9,<0.12"
+protobuf = ">=3.18.3"
 pytz = ">=2015.7"
 pyyaml = ">=6.0"
 requests = "<3.0.0"
-sqlparse = ">=0.2.3,<0.5"
+sqlparse = ">=0.2.3,<0.4.4"
 typing-extensions = ">=3.7.4"
 werkzeug = ">=1,<3"
 
@@ -169,14 +153,14 @@ python-versions = ">=3.6.1"
 
 [[package]]
 name = "dbt-postgres"
-version = "1.4.5"
+version = "1.5.0"
 description = "The postgres adapter plugin for dbt (data build tool)"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-dbt-core = "1.4.5"
+dbt-core = "1.5.0"
 psycopg2-binary = ">=2.8,<3.0"
 
 [[package]]
@@ -237,7 +221,7 @@ requests = ["requests (>=2.20.0,<3.0.0dev)"]
 
 [[package]]
 name = "google-cloud-bigquery"
-version = "3.9.0"
+version = "3.10.0"
 description = "Google BigQuery API client library"
 category = "main"
 optional = false
@@ -258,8 +242,8 @@ python-dateutil = ">=2.7.2,<3.0dev"
 requests = ">=2.21.0,<3.0.0dev"
 
 [package.extras]
-all = ["google-cloud-bigquery-storage (>=2.0.0,<3.0.0dev)", "grpcio (>=1.47.0,<2.0dev)", "pyarrow (>=3.0.0)", "pandas (>=1.1.0)", "db-dtypes (>=0.3.0,<2.0.0dev)", "ipywidgets (>=7.7.0)", "ipykernel (>=6.0.0)", "geopandas (>=0.9.0,<1.0dev)", "Shapely (>=1.8.4,<2.0dev)", "ipython (>=7.23.1,!=8.1.0)", "tqdm (>=4.7.4,<5.0.0dev)", "opentelemetry-api (>=1.1.0)", "opentelemetry-sdk (>=1.1.0)", "opentelemetry-instrumentation (>=0.20b0)", "grpcio (>=1.49.1,<2.0dev)"]
-bqstorage = ["google-cloud-bigquery-storage (>=2.0.0,<3.0.0dev)", "grpcio (>=1.47.0,<2.0dev)", "pyarrow (>=3.0.0)", "grpcio (>=1.49.1,<2.0dev)"]
+all = ["google-cloud-bigquery-storage (>=2.6.0,<3.0.0dev)", "grpcio (>=1.47.0,<2.0dev)", "pyarrow (>=3.0.0)", "pandas (>=1.1.0)", "db-dtypes (>=0.3.0,<2.0.0dev)", "ipywidgets (>=7.7.0)", "ipykernel (>=6.0.0)", "geopandas (>=0.9.0,<1.0dev)", "Shapely (>=1.8.4,<2.0dev)", "ipython (>=7.23.1,!=8.1.0)", "tqdm (>=4.7.4,<5.0.0dev)", "opentelemetry-api (>=1.1.0)", "opentelemetry-sdk (>=1.1.0)", "opentelemetry-instrumentation (>=0.20b0)", "grpcio (>=1.49.1,<2.0dev)"]
+bqstorage = ["google-cloud-bigquery-storage (>=2.6.0,<3.0.0dev)", "grpcio (>=1.47.0,<2.0dev)", "pyarrow (>=3.0.0)", "grpcio (>=1.49.1,<2.0dev)"]
 geopandas = ["geopandas (>=0.9.0,<1.0dev)", "Shapely (>=1.8.4,<2.0dev)"]
 ipython = ["ipython (>=7.23.1,!=8.1.0)", "ipykernel (>=6.0.0)"]
 ipywidgets = ["ipywidgets (>=7.7.0)", "ipykernel (>=6.0.0)"]
@@ -301,7 +285,7 @@ protobuf = ">=3.19.5,<3.20.0 || >3.20.0,<3.20.1 || >3.20.1,<4.21.0 || >4.21.0,<4
 
 [[package]]
 name = "google-cloud-storage"
-version = "2.8.0"
+version = "2.9.0"
 description = "Google Cloud Storage API client library"
 category = "main"
 optional = false
@@ -330,7 +314,7 @@ testing = ["pytest"]
 
 [[package]]
 name = "google-resumable-media"
-version = "2.4.1"
+version = "2.5.0"
 description = "Utilities for Google Media Downloads and Resumable Uploads"
 category = "main"
 optional = false
@@ -373,18 +357,18 @@ protobuf = ">=3.19.5,<3.20.0 || >3.20.0,<3.20.1 || >3.20.1,<4.21.1 || >4.21.1,<4
 
 [[package]]
 name = "grpcio"
-version = "1.53.0"
+version = "1.54.0"
 description = "HTTP/2-based RPC framework"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [package.extras]
-protobuf = ["grpcio-tools (>=1.53.0)"]
+protobuf = ["grpcio-tools (>=1.54.0)"]
 
 [[package]]
 name = "grpcio-status"
-version = "1.53.0"
+version = "1.54.0"
 description = "Status proto mapping for gRPC"
 category = "main"
 optional = false
@@ -392,63 +376,20 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 googleapis-common-protos = ">=1.5.5"
-grpcio = ">=1.53.0"
+grpcio = ">=1.54.0"
 protobuf = ">=4.21.6"
 
 [[package]]
-name = "grpclib"
-version = "0.4.3"
-description = "Pure-Python gRPC implementation for asyncio"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-h2 = ">=3.1.0,<5"
-multidict = "*"
-
-[package.extras]
-protobuf = ["protobuf (>=3.15.0)"]
-
-[[package]]
-name = "h2"
-version = "4.1.0"
-description = "HTTP/2 State-Machine based protocol implementation"
-category = "main"
-optional = false
-python-versions = ">=3.6.1"
-
-[package.dependencies]
-hpack = ">=4.0,<5"
-hyperframe = ">=6.0,<7"
-
-[[package]]
 name = "hologram"
-version = "0.0.15"
+version = "0.0.16"
 description = "JSON schema generation from dataclasses"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-jsonschema = ">=3.0,<4.0"
+jsonschema = ">=3.0"
 python-dateutil = ">=2.8,<2.9"
-
-[[package]]
-name = "hpack"
-version = "4.0.0"
-description = "Pure-Python HPACK header compression"
-category = "main"
-optional = false
-python-versions = ">=3.6.1"
-
-[[package]]
-name = "hyperframe"
-version = "6.0.1"
-description = "HTTP/2 framing layer for Python"
-category = "main"
-optional = false
-python-versions = ">=3.6.1"
 
 [[package]]
 name = "idna"
@@ -485,20 +426,19 @@ i18n = ["Babel (>=2.7)"]
 
 [[package]]
 name = "jsonschema"
-version = "3.2.0"
+version = "4.17.3"
 description = "An implementation of JSON Schema validation for Python"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 
 [package.dependencies]
 attrs = ">=17.4.0"
-pyrsistent = ">=0.14.0"
-six = ">=1.11.0"
+pyrsistent = ">=0.14.0,<0.17.0 || >0.17.0,<0.17.1 || >0.17.1,<0.17.2 || >0.17.2"
 
 [package.extras]
-format = ["idna", "jsonpointer (>1.13)", "rfc3987", "strict-rfc3339", "webcolors"]
-format_nongpl = ["idna", "jsonpointer (>1.13)", "webcolors", "rfc3986-validator (>0.1.0)", "rfc3339-validator"]
+format = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3987", "uri-template", "webcolors (>=1.11)"]
+format-nongpl = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-validator", "rfc3986-validator (>0.1.0)", "uri-template", "webcolors (>=1.11)"]
 
 [[package]]
 name = "leather"
@@ -540,8 +480,8 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "mashumaro"
-version = "3.3.1"
-description = "Fast serialization framework on top of dataclasses"
+version = "3.6"
+description = "Fast serialization library on top of dataclasses"
 category = "main"
 optional = false
 python-versions = ">=3.7"
@@ -575,14 +515,6 @@ description = "MessagePack serializer"
 category = "main"
 optional = false
 python-versions = "*"
-
-[[package]]
-name = "multidict"
-version = "6.0.4"
-description = "multidict implementation"
-category = "main"
-optional = false
-python-versions = ">=3.7"
 
 [[package]]
 name = "networkx"
@@ -620,7 +552,7 @@ future = "*"
 
 [[package]]
 name = "pathspec"
-version = "0.10.3"
+version = "0.11.1"
 description = "Utility library for gitignore style pattern matching of file paths."
 category = "main"
 optional = false
@@ -642,7 +574,7 @@ testing = ["google-api-core[grpc] (>=1.31.5)"]
 
 [[package]]
 name = "protobuf"
-version = "4.22.3"
+version = "4.22.4"
 description = ""
 category = "main"
 optional = false
@@ -658,22 +590,22 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "pyasn1"
-version = "0.4.8"
-description = "ASN.1 types and codecs"
+version = "0.5.0"
+description = "Pure-Python implementation of ASN.1 types and DER/BER/CER codecs (X.208)"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 
 [[package]]
 name = "pyasn1-modules"
-version = "0.2.8"
-description = "A collection of ASN.1-based protocols modules."
+version = "0.3.0"
+description = "A collection of ASN.1-based protocols modules"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 
 [package.dependencies]
-pyasn1 = ">=0.4.6,<0.5.0"
+pyasn1 = ">=0.4.6,<0.6.0"
 
 [[package]]
 name = "pycparser"
@@ -742,17 +674,17 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "requests"
-version = "2.28.2"
+version = "2.30.0"
 description = "Python HTTP for Humans."
 category = "main"
 optional = false
-python-versions = ">=3.7, <4"
+python-versions = ">=3.7"
 
 [package.dependencies]
 certifi = ">=2017.4.17"
 charset-normalizer = ">=2,<4"
 idna = ">=2.5,<4"
-urllib3 = ">=1.21.1,<1.27"
+urllib3 = ">=1.21.1,<3"
 
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
@@ -786,14 +718,6 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
-name = "stringcase"
-version = "1.2.0"
-description = "String case converter."
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "text-unidecode"
 version = "1.3"
 description = "The most basic Text::Unidecode port"
@@ -811,41 +735,41 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "urllib3"
-version = "1.26.15"
+version = "2.0.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+python-versions = ">=3.7"
 
 [package.extras]
-brotli = ["brotlicffi (>=0.8.0)", "brotli (>=1.0.9)", "brotlipy (>=0.6.0)"]
-secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "urllib3-secure-extra", "ipaddress"]
-socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
+secure = ["certifi", "cryptography (>=1.9)", "idna (>=2.0.0)", "pyopenssl (>=17.1.0)", "urllib3-secure-extra"]
+socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
+zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "werkzeug"
-version = "2.2.3"
+version = "2.3.3"
 description = "The comprehensive WSGI web application library."
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 
 [package.dependencies]
 MarkupSafe = ">=2.1.1"
 
 [package.extras]
-watchdog = ["watchdog"]
+watchdog = ["watchdog (>=2.3)"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "4d00ae31a775cf349d271661e1f1cfe0a66887321fd24bb0dd0e20e9ee16a29d"
+content-hash = "71a16930a28dce78b97e776c363fe06141c0dbfbf6e57a0196df5504273a1a89"
 
 [metadata.files]
 agate = []
 attrs = []
 babel = []
-betterproto = []
 cachetools = []
 certifi = []
 cffi = []
@@ -869,11 +793,7 @@ googleapis-common-protos = []
 grpc-google-iam-v1 = []
 grpcio = []
 grpcio-status = []
-grpclib = []
-h2 = []
 hologram = []
-hpack = []
-hyperframe = []
 idna = []
 isodate = []
 jinja2 = []
@@ -884,7 +804,6 @@ markupsafe = []
 mashumaro = []
 minimal-snowplow-tracker = []
 msgpack = []
-multidict = []
 networkx = []
 packaging = []
 parsedatetime = []
@@ -894,7 +813,10 @@ protobuf = []
 psycopg2-binary = []
 pyasn1 = []
 pyasn1-modules = []
-pycparser = []
+pycparser = [
+    {file = "pycparser-2.21-py2.py3-none-any.whl", hash = "sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9"},
+    {file = "pycparser-2.21.tar.gz", hash = "sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"},
+]
 pyrsistent = []
 python-dateutil = []
 python-slugify = []
@@ -905,7 +827,6 @@ requests = []
 rsa = []
 six = []
 sqlparse = []
-stringcase = []
 text-unidecode = []
 typing-extensions = []
 urllib3 = []
