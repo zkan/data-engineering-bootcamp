@@ -11,8 +11,8 @@ models:
   - name: my_events
     description: Greenery events
     columns:
-      - name: event_id
-        description: Event ID
+      - name: event_guid
+        description: Event GUID
         tests:
           - not_null
           - unique

@@ -27,7 +27,7 @@ greenery:
       project: deb-2023
       dataset: dbt_tea
       threads: 1
-      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/deb-2023-eb731094ca12-bq&gcs.json
+      keyfile: /Users/tk/Documents/data-engineering-bootcamp/00-bootcamp-project/deb-2023-eb731094ca12-bq&gcs.json
       location: asia-southeast1
 
     prod_bigquery:
@@ -36,7 +36,7 @@ greenery:
       project: dataengineercafe
       dataset: deb_bootcamp
       threads: 1
-      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/YOUR-KEYFILE.json
+      keyfile: /Users/tk/Documents/data-engineering-bootcamp/00-bootcamp-project/deb-2023-eb731094ca12-bq&gcs.json
       location: asia-southeast1
 
   target: dbt_tea_bigquery

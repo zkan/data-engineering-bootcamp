@@ -33,5 +33,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   greenery:
     # Config indicated by + and applies to all files under models/example/
-    example:
       +materialized: view
+      example:
+       +enable: false
+      staging:
+       greenery:
+        +materialized: view
+        +schema: staging
+    intermediate:
+      +materialized: table
+      +schema: intermediate
+    marts:
+      +materialized: view
+      +schema: reporting
