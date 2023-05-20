@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "deb-2023",
+  "private_key_id": "181e69c62d567c0a3d25e8b1461ff9b9ffdb39c7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC85tECMcaZCrgM\nbC1+sExlOBPI9wn4bcawrqbb3AfQ57cL3FDYD2CfN3yjKEcV+MOz1E0bOJpLQb6L\nt+yc0ZSKIOUtrIjHwpSfUqlv6IAGMHw5awSArgXDxYSGy9n7loHxcUNAQVOzPEqz\nDkYfUJ+sjGammpxN5Jw7QXJo3znaa+o3YYVLOXsBdNYpEwdUxX7187zsWL94bw5D\nnHTWimRbgLPDXnSDb2NINRPf0ehzsqZPUgXmka4yWp0SLTdyXG/U200+/0AulLaJ\naOrj0BhEZkLyqh8uAgmCcAqPZoKpIAbdjQHgVHjTJbDqcsx4ZWDWnkuSIxEsolLS\n8hEB2gSRAgMBAAECggEAFWWx1CVOQSSpL2MLjjerF6YP+6ob+4N3x6io5uuYCQ5O\nOi41DBxFzhMrb5HO54q7pEGOkGBLfe3PByWIzESjJjhOrWtHPRVp31guMCpuYgUY\n9SoNowPTTFcxyVEK+ogUZQR24S7lK77PGVQrFj38MD/hGssVnG8iUUX7Dy0F8Rsp\nZVvTi1j6BcDuamJ103FrsxjbMg/aQ8cFLQYYQYJEm+Czfa6IN9XkiksLKyicTRvJ\naeZM08EyzIISuSC2Pk8WREGO0oo/PYxmJYsuewnWTjHb8I2JA5UlPa21l9BrQXSY\ntOuM2oWmA0QIQWG6Zf+FwpOyJ12gLn9N4l2sqjG24QKBgQDctYyQ4PJnIxSgP2ki\nVIlFrbrDO0DqI6g4XbttTvZuNyAEb+uCf2unuwyCtCRrxp9Twe8stnh4VzysTfFT\ns8YfFpGHc4CYa7dok5YZl0SUuaiR6KQ6+NJJb1QjSyFjJ42mURX3OrFLqtvUxY0/\nTsJHekDeqX7k+QRFqG2D77G2CQKBgQDbG0P7mWsD+vcuMca3gE3o4Sl210ieUq42\n/Tu7lwJchfWzDe0hJORsqQ3TQRm8sKitNQcpd56hnVvMezbKT566JwIXumNDtbQf\nY98PFrPrIlCB1QUzDcglXQeMPhRb15UqMxr0/ObekZ8kDGmwRyRORlSbRZYRDsDZ\n2K7Cfis8SQKBgQDS/W+aVKEGvb+LDfN4kS4FgXZoCq4c5ud6swhpD7J/XI1sEH4o\n65zD5QmprYKf0WogzOXTbcCu8l6bLYvFg7ejopSO03kcvOTBwU0du8EhGHcwvSC7\nC4EkGJxrfPg27On6E8wW43H4LycmOZC085rAb/uxoIEhbXiLCt9e4HaX2QKBgQDY\nRKFlxpkK5Lz2q8spdUtxgk4bL4ROQe4T+QDsuLFsAg3zHtvgyzlsx7ENxERTK0xT\nKvRWyeuaOmhR/YynRM+3jqlSIne4bbHNChcyHYaZoNU2Ub1AF2pm9txsYRpXTQO/\nE5KYHskDB1m9i0MG7DG50VHRsW3eiGFypZ5Z+49RgQKBgBLJ+HYPH1MpJT0HGLXN\nm+fTKeMXB5NFCZVV8yz4Manj4jHzQDw+u9F5mxeXFA1xS/xuQB5QBMThCOKPF3Bl\n8edz2xfBXHB3spy9wBJbu2nE/8n3+S8iQSK5n1nUJFLq+EsWj+d8xtvvzYIR+sEf\nyPY9uoysdMIdMu99rK/zNU9H\n-----END PRIVATE KEY-----\n",
+  "client_email": "codespace-serviceaccount@deb-2023.iam.gserviceaccount.com",
+  "client_id": "118425999856058133655",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/codespace-serviceaccount%40deb-2023.iam.gserviceaccount.com"
+}
