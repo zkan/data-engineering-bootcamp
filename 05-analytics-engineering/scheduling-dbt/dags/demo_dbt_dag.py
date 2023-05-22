@@ -7,6 +7,7 @@ example_dbt_project = DbtDag(
     dag_id="demo_dbt_dag",
     schedule_interval="@daily",
     start_date=timezone.datetime(2022, 11, 27),
+    #put your connection id
     conn_id="example_bigquery",
     catchup=False,
     dbt_project_name="example_dbt_project",
