@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "07-end-to-end-project"
+version = "0.1.0"
+description = ""
+authors = ["zkan <zkan.cs@gmail.com>"]
+readme = "README.md"
+packages = [{include = "07_end_to_end_project"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dbt-core = "^1.5.0"
+dbt-bigquery = "^1.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
