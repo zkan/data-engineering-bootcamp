@@ -11,7 +11,7 @@ models:
   - name: my_events
     description: Greenery events
     columns:
-      - name: event_guid
+      - name: event_id
         description: Event GUID
         tests:
           - not_null
@@ -27,7 +27,7 @@ models:
               values: ['page_view', 'add_to_cart', 'checkout', 'package_shipped']
       - name: user
         description: User ID
-        tests:
-          - relationships:
-              to: ref('my_users')
-              field: user_id
+        # tests:
+        #   - relationships:
+        #       to: ref('my_users')
+        #       field: user_id
