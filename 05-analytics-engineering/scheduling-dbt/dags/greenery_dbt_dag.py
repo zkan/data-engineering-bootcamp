@@ -11,8 +11,9 @@ example_dbt_project = DbtDag(
     catchup=False,
     dbt_project_name="greenery",
     dbt_args={
-        "schema": "dbt_tea"
+        "schema": "dbt_tea",
+        # "location": "asia-southeast1"
     },
     dbt_root_path="/opt/airflow/dbt",
-    tag=["DEB", ["2023"]]
+    tags=["DEB", "2023"],
 )
