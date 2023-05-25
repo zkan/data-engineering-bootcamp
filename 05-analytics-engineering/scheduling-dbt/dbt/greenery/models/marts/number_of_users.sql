@@ -9,7 +9,7 @@ users as (
 , final as (
 
 		select
-				count(distinct user_guid)
+				count(distinct user_guid) as user_count
 
 		from users
 

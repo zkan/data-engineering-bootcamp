@@ -10,7 +10,7 @@ orders as (
 , final as (
 
 		select
-				count(distinct order_guid)
+				count(distinct order_guid) as order_count
 
 		from orders
 
