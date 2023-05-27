@@ -27,7 +27,7 @@ greenery:
       project: deb-1-by-skooldio
       dataset: dbt_mui
       threads: 1
-      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/dags/deb-1-by-skooldio-9c5dab1f27c8.json
+      keyfile: /Users/bsaejia/data-engineering-bootcamp/00-bootcamp-project/dags/deb-1-by-skooldio-9c5dab1f27c8.json
       location: asia-southeast1
 
     prod_bigquery:
