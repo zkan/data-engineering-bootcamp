@@ -12,7 +12,7 @@ from google.oauth2 import service_account
 keyfile = os.environ.get("KEYFILE_PATH")
 service_account_info = json.load(open(keyfile))
 credentials = service_account.Credentials.from_service_account_info(service_account_info)
-project_id = "dataengineercafe"
+project_id = "deb-2023"
 client = bigquery.Client(
     project=project_id,
     credentials=credentials,
@@ -41,7 +41,7 @@ file_path = "users.csv"
 df = pd.read_csv(file_path, parse_dates=["created_at", "updated_at"])
 df.info()
 
-table_id = f"{project_id}.dbt_zkan.users_df"
+table_id = f"{project_id}.deb_workshop.users_df"
 job = client.load_table_from_dataframe(df, table_id, job_config=job_config)
 job.result()
 

@@ -28,6 +28,9 @@ class MySpider(scrapy.Spider):
 
         # Write to CSV
         # YOUR CODE HERE
+        with open('gold_price.csv', 'w') as f:
+            writer = csv.writer(f)
+            for g in rows
 
 
 if __name__ == "__main__":

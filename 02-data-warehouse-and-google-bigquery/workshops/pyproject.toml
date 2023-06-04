@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "loading-to-bigquery"
+version = "0.1.0"
+description = ""
+authors = ["zkan <zkan.cs@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+google-cloud-bigquery = "^3.9.0"
+google-api-python-client = "^2.86.0"
+pandas = "^2.0.0"
+pyarrow = "^11.0.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
