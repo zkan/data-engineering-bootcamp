@@ -1,3 +1,6 @@
+#if you use poetry, please run to CLI below
+#CLI: poetry install <-- to install necessary library written in pyproject.toml otherwise you have to pip install the below library by yourself one by one
+
 import json
 
 import avro.schema
@@ -6,7 +9,7 @@ import pyarrow.orc as orc
 from avro.datafile import DataFileReader, DataFileWriter
 from avro.io import DatumReader, DatumWriter
 
-
+# 1. How to use CSV
 print("### CSV ###")
 df_csv = pd.read_csv("homes.csv")
 df_csv.columns = [
@@ -22,6 +25,7 @@ df_csv.columns = [
 ]
 print(df_csv.head())
 
+# 2. How to use JSON
 print("### JSON ###")
 df_csv.to_json("homes.json")
 df_json = pd.read_json("homes.json")
@@ -34,13 +38,16 @@ with open("widgets.json") as data_file:
 df_widgets_json = pd.json_normalize(data)
 print(df_widgets_json.head())
 
+# 3. how to use Parquet
 print("### Parquet ###")
 df_csv.to_parquet("homes.parquet")
 df_pq = pd.read_parquet("homes.parquet")
 print(df_pq.head())
 
-## CLI: parquet-tools inspect --detail homes.parquet
+## CLI: poetry run parquet-tools inspect --detail homes.parquet (if you use poetry)
+## CLI: parquet-tools inspect --detail homes.parquet (if you don't use poetry)
 
+# 4 . How to use Avro
 print("### Avro ###")
 schema_file_name = "user.avsc"
 output_file_name = "users.avro"
@@ -72,6 +79,7 @@ data = data_reader.read()
 print(data)
 print(data.to_pydict())
 
+# 5. How to use XML
 print("### XML ###")
 df_xml = pd.read_xml("coordinates.xml")
 print(df_xml.head())
