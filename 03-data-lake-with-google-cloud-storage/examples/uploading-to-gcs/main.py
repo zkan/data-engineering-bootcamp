@@ -10,7 +10,7 @@ from google.oauth2 import service_account
 def upload_blob(bucket_name, source_file_name, destination_blob_name):
     """Uploads a file to the bucket."""
     # The ID of your GCS bucket
-    # bucket_name = "your-bucket-name"
+    # bucket_name = "bsm-100022"
     # The path to your file to upload
     # source_file_name = "local/path/to/file"
     # The ID of your GCS object

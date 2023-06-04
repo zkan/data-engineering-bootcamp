@@ -1,7 +1,7 @@
 greenery:
 
   outputs:
-    dbt_zkan:
+    dbt_mui:
       type: postgres
       threads: 1
       host: localhost
@@ -9,7 +9,7 @@ greenery:
       user: postgres
       pass: "{{ env_var('DBT_ENV_SECRET_PG_PASSWORD') }}"
       dbname: greenery
-      schema: dbt_zkan
+      schema: dbt_mui
 
     prod:
       type: postgres
@@ -21,22 +21,22 @@ greenery:
       dbname: greenery
       schema: prod
 
-    dbt_zkan_bigquery:
+    dbt_mui_bigquery:
       type: bigquery
       method: service-account
-      project: dataengineercafe
-      dataset: dbt_zkan
+      project: deb-1-by-skooldio
+      dataset: dbt_mui
       threads: 1
-      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/YOUR-KEYFILE.json
+      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/dags/deb-1-by-skooldio-9c5dab1f27c8.json
       location: asia-southeast1
 
     prod_bigquery:
       type: bigquery
       method: service-account
-      project: dataengineercafe
+      project: deb-1-by-skooldio
       dataset: deb_bootcamp
       threads: 1
-      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/YOUR-KEYFILE.json
+      keyfile: /workspaces/data-engineering-bootcamp/00-bootcamp-project/dags/deb-1-by-skooldio-9c5dab1f27c8.json
       location: asia-southeast1
 
-  target: dbt_zkan_bigquery
+  target: dbt_mui_bigquery
