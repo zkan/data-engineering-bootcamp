@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: greenery
+    schema: deb_bootcamp
+    database: white-sign-386415
+
+    tables:
+      - name: users
+        description: Greenery users
+      - name: events
+        description: Greenery events
+      - name: addresses
+      - name: products
+      - name: promos
+      - name: orders
+      - name: order_items

@@ -1,0 +1,3 @@
+user_id,first_name,last_name,email,phone_number,created_at,updated_at,address
+82a0b2f1-4124-4330-977b-9bddba44ec13,Egan,Gorini,egorinie@yolasite.com,198-746-1391,2020-01-17T04:30:01Z,2020-03-31T05:53:00Z,bfee6b0f-d8ea-4626-9786-a0e1497bd07b
+69d962db-8bf2-4122-a42c-a708e1cc0cab,Turner,Yacobsohn,tyacobsohnt@t-online.de,182-997-6046,2020-01-17T13:07:38Z,2020-01-27T14:45:59Z,4747877b-fb7d-4ec1-b42d-6b8f8707c984
