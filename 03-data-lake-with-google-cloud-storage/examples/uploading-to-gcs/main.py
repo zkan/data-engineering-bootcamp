@@ -10,7 +10,7 @@ from google.oauth2 import service_account
 def upload_blob(bucket_name, source_file_name, destination_blob_name):
     """Uploads a file to the bucket."""
     # The ID of your GCS bucket
-    # bucket_name = "your-bucket-name"
+    # bucket_name = "deb_data_lake"
     # The path to your file to upload
     # source_file_name = "local/path/to/file"
     # The ID of your GCS object
@@ -19,7 +19,7 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
     keyfile = os.environ.get("KEYFILE_PATH")
     service_account_info = json.load(open(keyfile))
     credentials = service_account.Credentials.from_service_account_info(service_account_info)
-    project_id = "dataengineercafe"
+    project_id = "white-sign-386415"
 
     storage_client = storage.Client(
         project=project_id,

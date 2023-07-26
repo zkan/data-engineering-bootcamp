@@ -1,0 +1,4 @@
+user_id,first_name,last_name,email,phone_number,created_at,updated_at,address
+1fada2e4-1018-48f1-84dc-802dc99171fe,Cherida,Winkell,cwinkell1u@zdnet.com,508-469-7243,2020-10-12T15:24:08Z,2020-12-19T15:41:24Z,2ccdea45-e41c-4845-8252-50c2f568e0db
+7be40e37-7a40-40ce-81c8-a5048c8befb1,Kalle,Roo,kroo28@naver.com,305-998-4341,2020-10-12T16:44:44Z,2021-01-04T17:28:50Z,96a40097-0030-4509-bb52-b3251fdef2b6
+ae9e2ae5-5044-4006-b83d-a3475530025e,Stanton,Divers,sdivers2p@msu.edu,830-974-4111,2020-10-12T15:27:33Z,2020-12-06T16:49:54Z,dfc2941f-aef1-4c70-a7f6-8105dda578f5

@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "white-sign-386415",
+  "private_key_id": "4ef60d83bf77dca1622a94368453e928ac481fe5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDOA9ZS5J4IuLVe\naLuGwC/C4qtCFqCwurBf6ClRtNJhwVZFRdBCXM87RhXUHmEehA+Ta0cpgT5I9yry\nKQaQHlntX9d/DU0DLovEvvelUBj4gB96nueFYqp66584jSkjaaXaoTFlR2eBkq4I\n+VEDemlynaBVWSu4ACyRQmIjwon8eNiYx/JtOmkhPklRLCgBDEN9F83CKrBB4hR2\nDvB3LeuH4A98XLs/AYqWyp4LLVFM2Ie0HcknVa4fw8HXhUT4JNUDktAGyy5lrRec\nzALPhKDJE0TK8JUUWA059VWgsu3snb5O8ybTvpmXY9wlFoSGo3CeKWaZ7r5ZTU9s\nhXQC1NF/AgMBAAECggEAU5Km7TWlDnCv0r615DIureZ6BvNa+JajWiS6LlUmS1W9\nA5kQpPs1bhw+WrCAQXrdPrZ0RdgSRlNObrJJ4UkOvgb1SqtApJvLQ2Mc30kg+B4x\npvKzhR7Dfd3711scZytChvCBM07GJIA2bZmGTdzozgA3vKfR3nDjo4HEgjE2/N3m\npMcuVdnlhrEsnjnrt0eUldVOfdvUOwrc13jmk/fanQW3YI/bN6PzuFgMlbfQ+CSn\n41YFvmtWvsmRKtpO5EG2zdNYGevf9okcYrO5MrkGR9mNrjYmFC02roRJ2Fc9MVn2\nPbVnAVCmIIGiBZ3OgzgKrtDNIqmKGEeLekjI0ekLYQKBgQDxCo5ZMhN9FnBDiN/H\nmkFPuP6MY4kjILYJ6iNdOJUYnF8VQnz5Dg2k0Ur1K+DuJ/exc4IrB6USiQKb6q8l\nnTl9aHxNQX9dM4F2lzrCAqZbiNG0NpZSTk3dp9Fei6CkkfiuHjQCuLbwaGtt53/G\noL9PFQG+Br4GvhnZB7c6EJeUJwKBgQDazNDmY5KoofTB8Pxg2igRMsH0XSoSfA97\neUfcOZXt+Cc/14x87JMcmM1vT8NDCnqTRbFja51gdv6e9ZDBt1CIvPFJCqBI9Yj7\n8RhGEp6X0m2JL8Syy7ViKjauQsLGEJrcPBzJfRO4z1/wTH8SeGv/urEuowiJheK3\nBrAddON26QKBgQCNQjlv7lfbe7Xo7iLu7+iMlwaeMYrhyj7EirGU5R8DYEicxe1F\na8X1LC54hfF4wHV5Sg8jtoQ325Fq3FsuePiDFSObhuHkNdYOMMxffHwPspvqt/7a\nV0dsufeKJ9vJ9j29lLe4TJXxR9CFhSCtv/C9oLr3qS3d97RgKxRm8+hRCwKBgQDO\nj5QcHR8E4rk+KzMogGxZKDEhcJ7aipLXP71OtHLOEXuEcwsnmPSdh8hScNvnu8nS\npXX9ZUhTHKPvD+gUaeq23KFyEn0Vw/AJ4ifHZ6afsEJGxHkPTu+zeCTdSRu2f1Cj\n4IBQ3Cs1S1nIc393wYY8DFVfsPzLUEGkBsVXWdWwmQKBgQDTVIVs5PMMV0Wx1t+u\notNbNcyZhuC9W17AuLe+2UgZKA3R3IPSukkuxkX4ADCvMdwhcaR6UYCH110iJX9x\nhJI6UbjmuV8YIt+wf6dLKbakvdnviE1AMUNNm80ZtWpTDmVfn2rPnlw64CNAY7li\nwVyGZmtbgZh2cx/1SzjGVV9Vsw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "deb-workshop-day-3-gcs@white-sign-386415.iam.gserviceaccount.com",
+  "client_id": "104848275827758165657",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/deb-workshop-day-3-gcs%40white-sign-386415.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
