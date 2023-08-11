@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "white-sign-386415",
+  "private_key_id": "a1aaec0966180ef64d6259548bcd69a7cae3c18a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC/ZeTdATXdqMzb\nwNME1dB4JGHsV6gDXHyEOMKGzNPGC+BOoHXXdB055CVvGF3uh78UCBRO7J3zlPch\nrx0baEPcKmWApQQ5oYmqcPMc6bY1NUvg2jxHUldQWolI+MYF3Xdi4zQlfUjhvvb5\naZFk5GHLmamFzW8uVDRtLy40cPnoEbYpU/qyUfCEUmDZuXuDTPsOXrFZnae5lTOX\n7jz0viWc6Xt3nM/dU9YqTaRWmoXg8NRfoOg/r/62CI0WVdwnO13LN4DhagRZeYBk\nLmBvR/QFvbgVsRHx59AkwwESDBVGxW498nPJNr/bUHN92flaVYHgTjZRE5d5JPsI\n49o2BrKxAgMBAAECggEAAJ2PwimLKuEqYgTffzFLDB40wPJVX4Ti0xRfhQlCyhe5\nTZ1ECVT3MWE+EjWHOzo6dYhdX1Z1Ehy88tWPDeEMQZwmDcq5CcmEKcxKlP0TugQ8\nCHf56zPHfOS9o2s2NB+b3DZ7rzkVIw79JhKuoISi665KrNXW91qmMBC2J+mujXHW\nMBpcwhJN5yyl0knBPvMfvfOb0MyJ4iuRv0cp36seWvcKXvEwwjLiN9zEShm/iX1u\nf+jkxzhXCSwb3KU+iO4xTn22yUu2zk/fmFbBTjGXvjln6uOExIBHjhEw8y7orCMs\nmleTZwA/zfuwpuv4PATeE0iPX6Grqys/vY66i026UQKBgQDj9j+/P07kbwv5H8Pm\n/UvT5xjkwI5kZFPaahNw2wK9Bh5Z2GCnGi1p54Y/NMtMJzYdm7SwgV6O7ITa88rE\nFmyUCh5ecom9Mj1KMSkTp5CXYNsyR8g5x3OvIgz0l3O/8hubVa+s9GNusA5qAXpu\nAHleQ8fqNhuPCKuImnCmn7uQ7QKBgQDW8F8izRiig5cQiVNVY3I/M7UaylZB6bFv\nev4XRVsqSRciwusALx4MrsEKYZDse9+1WRahYiTk5cJ0OzrHmp2aNG8j1Cu37/p6\nd70ZQ69NSXbHd1OZYXbbT6nNtNKzO6sGucSthw/2SHdZlv9o93Vet/YpKn6je9W4\n8oleC09kVQKBgEgbSkq6QcAsCAODMrpMAMJEZTFmXyQOQB/kUcXu4MzdtJgCw3/X\n3emT3Hj9wBiUhp+S8vKp2TkoQ1Xmq4qe9TVWhgil/j+kNpLTPgUDic74Sh17azAr\nkMIi6SotBeX/NRBLaEgy/Yizk7ugQBOvfrR8iC3jc5Ao0+lfwKZT/EZ5AoGAIP8j\ny8bqqkBDV7GNToWGy3cXrXY0icfjina6PT5TgYlY+OgthYi2N0I4tmxGAFf//uof\nVEUp3s367TcOjggJe9vi2ABBeepobJanPBKs/dNyXarO9bQFuCNhsQe6dPOLDOxF\n6lHavHdhgypwKWAb75+UNbulV1mydMMfHYXk+UUCgYAyA+9Yu0a2AldfYS2HMgdb\nlSEz3z+jjZodwtlc91POt1j1Yv40EqS6aOPsAJLwi6aw49AVvP8n0eNsKXm02hr/\nssB1nOlSU4jkGqde/fMEMxyEP1A9nMswhwArj4VoMPQ8g4cVm5m+WEqSJ6gv8Abm\nh1Hy/FHbZREK9qVbS3VGNw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "deb-bootcamp-for-bigquery-temp@white-sign-386415.iam.gserviceaccount.com",
+  "client_id": "106013872744558775059",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/deb-bootcamp-for-bigquery-temp%40white-sign-386415.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

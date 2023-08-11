@@ -1,0 +1,4 @@
+user_id,first_name,last_name,email,phone_number,created_at,updated_at,address
+393de08c-725c-457a-a591-16030480eb80,Reg,Harrop,rharrop6@naver.com,215-651-1811,2020-12-18T10:25:20Z,2021-01-19T10:53:15Z,96a40097-0030-4509-bb52-b3251fdef2b6
+d1f08820-32e6-4a31-abba-5aa533bc15a9,Alie,Blumson,ablumson1n@pinterest.com,210-173-2831,2020-12-18T11:46:04Z,2021-01-26T13:04:54Z,42e017a2-ca97-4f71-bf3c-d32605ef9d43
+b8e0e25a-412e-4b8c-aaa2-eb1b46036424,Gabriell,Gilmore,ggilmore3f@yolasite.com,164-927-2391,2020-12-18T01:52:22Z,2021-03-08T02:13:00Z,957af504-cee3-4f3a-8f5a-eb5a5bd23b16

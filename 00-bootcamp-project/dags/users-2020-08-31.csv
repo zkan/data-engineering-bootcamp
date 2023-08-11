@@ -1,0 +1,3 @@
+user_id,first_name,last_name,email,phone_number,created_at,updated_at,address
+1084cc0c-3ee1-42d2-aa29-368474bd1579,Angelico,Lenham,alenhamj@google.nl,991-354-9667,2020-08-31T16:43:25Z,2020-10-02T18:12:48Z,dfc2941f-aef1-4c70-a7f6-8105dda578f5
+db41a6d4-70fc-43b1-82a5-393b46a2bdfa,Tiebout,Josefs,tjosefs1c@wordpress.org,753-709-5477,2020-08-31T01:19:00Z,2020-10-01T03:31:16Z,2c7bd191-c7c9-45d3-9dd0-612320bd9817

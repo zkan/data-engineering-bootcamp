@@ -1,0 +1,3 @@
+user_id,first_name,last_name,email,phone_number,created_at,updated_at,address
+cf7fec7a-ccca-4f66-9b3f-137d89a4a5ce,Roy,De Simone,rdesimone1l@sun.com,753-688-7731,2020-07-16T15:31:01Z,2020-10-23T16:05:32Z,e40b6557-536e-478e-a405-eed9959aa9f7
+c9d5048d-4879-4c2f-865f-3a971f3eea4e,Carie,Elcoux,celcoux1q@zimbio.com,812-545-8408,2020-07-16T12:39:03Z,2020-07-22T15:22:20Z,f785f0ae-f5d7-49a8-a4b7-95b470f7cb63
