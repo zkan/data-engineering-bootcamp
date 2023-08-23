@@ -1,6 +1,6 @@
 # Bootcamp Project
 
-# Day 1
+## Day 1
 
 ```bash
 poetry run python main-postgres.py
