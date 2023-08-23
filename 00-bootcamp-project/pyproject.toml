@@ -11,6 +11,7 @@ pysftp = "0.2.9"
 psycopg2 = "2.9.6"
 google-cloud-bigquery = "3.9.0"
 pandas = "2.0.0"
+google-cloud-storage = "^2.8.0"
 
 [tool.poetry.dev-dependencies]
 
