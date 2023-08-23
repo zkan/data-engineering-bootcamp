@@ -19,3 +19,9 @@ poetry run python main-sftp.py
 ```bash
 poetry run python load_data_to_bigquery.py
 ```
+
+## Day 3
+
+```bash
+poetry run python load_data_to_gcs_then_bigquery.py
+```
