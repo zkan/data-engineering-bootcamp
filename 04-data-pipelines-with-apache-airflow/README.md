@@ -9,6 +9,7 @@
 | - | - |
 | `dags/` | โฟลเดอร์ที่เก็บโค้ด DAG หรือ Data Pipelines ที่เราสร้างขึ้น |
 | `plugins/` | โฟลเดอร์ที่เก็บ Plugins ของ Airflow |
+| `config/` | โฟลเดอร์ที่เก็บไฟล์ Configuration อย่างไฟล์ `airflow_local_settings.py` |
 | `tests/` | โฟลเดอร์ที่เก็บ Tests |
 | `docker-compose.yaml` | ไฟล์ Docker Compose ที่ใช้รัน Airflow ขึ้นมาบนเครื่อง |
 
@@ -17,7 +18,7 @@
 Before we run Airflow, let's create these folders first:
 
 ```sh
-mkdir -p ./dags ./logs ./plugins ./tests
+mkdir -p ./dags ./config ./logs ./plugins ./tests
 ```
 
 On **Linux**, please make sure to configure the Airflow user for the docker-compose:
