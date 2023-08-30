@@ -11,7 +11,7 @@ example_dbt_project = DbtDag(
     catchup=False,
     dbt_project_name="example_dbt_project",
     dbt_args={
-        "schema": "dbt_bootcamp"
+        "schema": "dbt_zkan"
     },
     dbt_root_path="/opt/airflow/dbt",
 )
