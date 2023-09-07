@@ -1,0 +1,42 @@
+version: 2
+
+models:
+
+  - name: stg_greenery__users
+    description: Staging model for Greenery users
+    columns:
+      - name: user_id
+        description: User ID
+
+  - name: stg_greenery__products
+    description: Staging model for Greenery products
+    colums:
+      - name: product_guid
+        description: Product GUID
+        tests:
+          - not_null
+          - unique
+
+  # - name: stg_greenery__events
+  #   description: Greenery events
+  #   columns:
+  #     - name: event_guid
+  #       description: Event ID
+  #       tests:
+  #         - not_null
+  #         - unique
+  #         - dbt_expectations.expect_column_to_exist
+  #         - dbt_expectations.expect_column_values_to_be_unique
+  #     - name: event_type
+  #       description: Event Type
+  #       tests:
+  #         - dbt_expectations.expect_column_values_to_be_of_type:
+  #             column_type: string
+  #         - accepted_values:
+  #             values: ['page_view', 'add_to_cart', 'checkout', 'package_shipped']
+  #     - name: user_guid
+  #       description: User ID
+  #       # tests:
+  #       #   - relationships:
+  #       #       to: ref('users')
+  #       #       field: user_id

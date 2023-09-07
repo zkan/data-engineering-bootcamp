@@ -1,0 +1,1 @@
+select state from {{ ref('stg_greenery__addresses') }}

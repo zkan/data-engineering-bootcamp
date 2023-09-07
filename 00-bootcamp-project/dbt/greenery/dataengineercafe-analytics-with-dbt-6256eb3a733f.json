@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "dataengineercafe",
+  "private_key_id": "6256eb3a733f336fb8289304aab5241bd72fc288",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDJ4ZtVofBoRXlK\nCu8FheyXPHDc2KwF8FobLoQLORY/vW2/yBat1R7yMFh5e525xXYA+yfvNKT/YOwj\nYA+gDo93ee/rj2sENdmpmy1tvo8HDk5TCBdHoKPwDtYCm6NQz6A2drGI2P+6OT6v\nff5u+I+51X+ObPq1u2FDZ/X235d7Vb7iTw/mPvBt44B4di4mHmTOL9iJ6KtKDo6+\nHvPjg0V2IgU69E7gq/K9DkDiwFrQWFY2pVnuzUorlVobx3LExKo/NjT5kuXBU+Um\nDQ9MPke4zcGuo2csCnLQgw9IOzEbzNMtXLZD5ES5DCYTq1w54KbueKWE6TqERXnG\nUx5Bdcv9AgMBAAECggEAYWiwUMNQgp9zBJz988ZJADgzpPwPFNaCQ7dQEzI6YAsA\n15auCrZYtjdJmWRiGG8EnziQbkUSj/6uMet53prn8pgtgZWz51Ysbj/nzZoy3Q60\nEDBJO1BxibU+4gdC6A0mmuDujL9XtP1GF9tNVzIr91jisVA4MFP3fFS/Q51jNCix\n5VTDyjvj/eyWHQUVegiElSISqAgNfIzaT0SmNX5t+pQ6XLBwi9hxrgt/TYLuqiCi\nO3FAcd48fqQdOyM0fO9RZvC8tkWCdKeUAdLO+u4egv4yfXUFR3r2iS5L5XjsCk8v\noKNBv/EvZVz+Fo0FO3eOq3xoGRyhRcfdTrQyYAzB6QKBgQDsFGeb0voHzOQTd2o3\nV2oSI55Q9aq1SnWgdiZZqp5HMK/6dQ3kRCpDoHymBsiB1pyDwvBnwpTWdq9yMwOp\nbLXLTKgV0s9NT/OXn49fYGmPkzBwQ6hZtCAn3WSAHuF6oujsit6dv5bBgixNhytf\n+ai7F5fe30VJ0YvmYVjapJNwAwKBgQDa6nnxXxAjun6LBp9+rOnMM2EabtWg3CLC\nkFJzs7t/01gQTZOKIihLwhD4fDHoch8SU2z152LOLSEiclrF5OQn1qPq/b/yUbjU\nzuREvLi+zwi8K28W4z6/CjOM8fg+zxD+fGMqpC0BgHG/8Rp77mGlH6pLtfBojwe4\n32M1BcMT/wKBgC51QYJvvVaFoqiWCmgDotMZAVHLVqHAmm9OcPOaWPWHhkoSeP5f\nz7VpQr5lfVXXxwtC9I5mw2WFC7e8hE72Hrx4RGevCa6cOkKvWsaZMYzYmWKuXdXx\nVZaiweFYsmSw5IeQOIjwqBlCpbdID2geuG7BENkCNR92xkI7DAJS+tTDAoGAS9UZ\ndMFHZ/j8SNB8g3cGbhQGOQ/XtKdM6zTvOuExvC/Lu6oDx7/ZUZTiKBFtgGW32bNI\ndU437c+4QKR4SUDmv94cXhSUXy5r5lvcuurc3Ev/bJ9nFfiWDbtM7DANnERCUMVp\n3KWOaYzC2oh8ch27eWWkqiFWLAIP3LyVMxLR5qUCgYEAxvANmz2qQATVkiGf4xTg\nGemzvaw06n8hCWAkfSbn6QHDy6vlY0ynL6aV/5rK8Nf3J/lRGLjk92NpnYLG3oBr\nVjxPSEg7W3+zDHlo/MBAdAlQJKF9Gp43CsVNckGhxjaYfrDgw4RAO2jxrLhfRHdD\nFx6ITRJ9e0zJ3sSPQHhqSAI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "deb2-analytics-with-dbt@dataengineercafe.iam.gserviceaccount.com",
+  "client_id": "110634368336992539339",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/deb2-analytics-with-dbt%40dataengineercafe.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
