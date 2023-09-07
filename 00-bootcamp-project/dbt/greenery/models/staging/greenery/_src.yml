@@ -6,11 +6,13 @@ sources:
     database: dataengineercafe
 
     tables:
-      - name: users
-        description: Greenery users
-      - name: events
-        description: Greenery events
       - name: addresses
         description: User addresses
+      - name: events
+        description: Greenery events
+      - name: order_items
       - name: orders
       - name: products
+      - name: promos
+      - name: users
+        description: Greenery users

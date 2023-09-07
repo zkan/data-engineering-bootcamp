@@ -1,10 +1,12 @@
-with source as (
+with
+
+source as (
 
     select * from {{ source('greenery', 'users') }}
 
-),
+)
 
-renamed_recasted as (
+, renamed_recasted as (
 
     select
         user_id as user_guid

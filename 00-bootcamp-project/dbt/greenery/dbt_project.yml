@@ -43,5 +43,8 @@ models:
       skooldio:
         +materialized: table
         # +schema: staging
+    intermediate:
+      +materialized: table
+      +schema: intermediate
     marts:
       +schema: marts
