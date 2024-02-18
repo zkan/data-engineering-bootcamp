@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "00-bootcamp-project-solution"
+version = "0.1.0"
+description = ""
+authors = ["Kan Ouivirach <kan@odds.team>"]
+
+[tool.poetry.dependencies]
+python = "3.10.13"
+requests = "2.29.0"
+pysftp = "0.2.9"
+psycopg2 = "2.9.6"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
