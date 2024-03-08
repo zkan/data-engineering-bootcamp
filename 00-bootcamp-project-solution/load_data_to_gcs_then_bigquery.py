@@ -45,6 +45,7 @@ job_config = bigquery.LoadJobConfig(
     autodetect=True,
 )
 
+# Addresses
 data = "addresses"
 file_path = f"{DATA_FOLDER}/{data}.csv"
 destination_blob_name = f"{BUSINESS_DOMAIN}/{data}/{data}.csv"
@@ -63,6 +64,7 @@ job.result()
 table = bigquery_client.get_table(table_id)
 print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
 
+# Products
 data = "products"
 file_path = f"{DATA_FOLDER}/{data}.csv"
 destination_blob_name = f"{BUSINESS_DOMAIN}/{data}/{data}.csv"
@@ -81,6 +83,7 @@ job.result()
 table = bigquery_client.get_table(table_id)
 print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
 
+# Order Items
 data = "order_items"
 file_path = f"{DATA_FOLDER}/{data}.csv"
 destination_blob_name = f"{BUSINESS_DOMAIN}/{data}/{data}.csv"
@@ -125,6 +128,7 @@ job_config = bigquery.LoadJobConfig(
     ),
 )
 
+# Events
 data = "events"
 dt = "2021-02-10"
 partition = dt.replace("-", "")
@@ -145,6 +149,7 @@ job.result()
 table = bigquery_client.get_table(table_id)
 print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
 
+# Users
 data = "users"
 dt = "2020-10-23"
 partition = dt.replace("-", "")
@@ -165,6 +170,7 @@ job.result()
 table = bigquery_client.get_table(table_id)
 print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
 
+# Orders
 data = "orders"
 dt = "2021-02-10"
 partition = dt.replace("-", "")
