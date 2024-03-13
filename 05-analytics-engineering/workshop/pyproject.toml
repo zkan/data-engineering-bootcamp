@@ -6,9 +6,9 @@ authors = ["zkan <zkan.cs@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-dbt-core = "1.5.0"
-dbt-postgres = "1.5.0"
-dbt-bigquery = "1.5.0"
+dbt-core = "^1.7.9"
+dbt-postgres = "^1.7.9"
+dbt-bigquery = "^1.7.6"
 
 [tool.poetry.dev-dependencies]
 
