@@ -1,0 +1,29 @@
+version: 2
+
+models:
+
+  - name: my_users
+    description: Greenery users
+    columns:
+      - name: user_id
+        description: User ID
+        tests:
+          - unique
+          - not_null
+
+  - name: my_events
+    description: Greenery events
+    columns:
+      - name: event_id
+        description: Event ID
+        tests:
+          - unique
+          - dbt_expectations.expect_column_to_exist
+
+  - name: stg_greenery__users
+    description: Staging models for Greenery users
+    columns:
+      - name: user_guid
+        description: User GUID
+        tests:
+          - not_null

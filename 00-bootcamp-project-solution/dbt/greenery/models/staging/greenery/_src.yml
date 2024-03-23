@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: greenery
+    schema: deb_bootcamp
+    database: dataengineercafe
+
+    tables:
+      - name: users
+        description: Greenery users
+      - name: events
+        description: Greenery events
+      - name: orders
+        description: Greenery orders
+      - name: addresses
+        description: Greenery addresses
+      - name: products
+        description: Greenery products
+      - name: order_items
+        description: Greenery order items
+      - name: promos
+        description: Greenery promotions
