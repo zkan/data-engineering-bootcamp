@@ -22,13 +22,13 @@ Skooldio](https://landing.skooldio.com/data-engineering-bootcamp)
 
 ## Course Modules
 
-1. [Introduction to Data Engineering](01-introduction-to-data-engineering)
-1. [Data Warehouse and Google BigQuery](02-data-warehouse-and-google-bigquery)
-1. [Data Lake with Google Cloud Storage](03-data-lake-with-google-cloud-storage)
-1. [Data Pipelines with Apache Airflow](04-data-pipelines-with-apache-airflow)
-1. [Analytics Engineering](05-analytics-engineering)
-1. [Data Visualization with Looker Studio](06-data-visualization-with-looker-studio)
-1. [End-to-End Project](07-end-to-end-project)
+1. [Data Engineering Essentials](00-data-engineering-essentials)
+1. [Data Warehouse, Data Governance and Security](01-data-warehouse-data-governance-and-security)
+1. [Data Lake & Big Data Processing](02-data-lake-and-big-data-processing)
+1. [Automated Data Pipelines](03-automated-data-pipelines)
+1. [Analytics Engineering](04-analytics-engineering)
+1. [Data Visualization](05-data-visualization-with-looker-studio)
+1. [End-to-End Project](06-end-to-end-project)
 
 ## Guidelines
 
