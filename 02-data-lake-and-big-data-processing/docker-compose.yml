@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  spark-master:
+    image: spark-image
+    container_name: spark-master
+    entrypoint: ['./entrypoint.sh', 'master']
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4040:4040"
+      - "9090:8080"
+      - "7077:7077"
+      - "3000:3000"
+    volumes:
+      - ./pyspark:/opt/spark/pyspark
+      - spark-logs:/opt/spark/spark-events
+    env_file:
+      - .env.spark
+
+  spark-history-server:
+    container_name: spark-history
+    image: spark-image
+    entrypoint: ['./entrypoint.sh', 'history']
+    depends_on:
+      - spark-master
+    env_file:
+      - .env.spark
+    volumes:
+      - spark-logs:/opt/spark/spark-events
+    ports:
+      - '18080:18080'
+
+  spark-worker:
+    image: spark-image
+    entrypoint: ['./entrypoint.sh', 'worker']
+    volumes:
+      - ./pyspark:/opt/spark/pyspark
+      - spark-logs:/opt/spark/spark-events
+    env_file:
+      - .env.spark
+
+volumes:
+  spark-logs:
