@@ -1,5 +1,5 @@
-# FROM deltaio/delta-docker:latest
-FROM deltaio/delta-docker:latest_arm64
+# FROM deltaio/delta-docker:0.8.1_2.3.0
+FROM deltaio/delta-docker:0.8.1_2.3.0_arm64
 
 USER root
 
