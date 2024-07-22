@@ -15,7 +15,7 @@ services:
       - 5432:5432
 
   sqlpad:
-    image: sqlpad/sqlpad:6.11.2
+    image: sqlpad/sqlpad:7
     restart: always
     depends_on:
       - postgres
