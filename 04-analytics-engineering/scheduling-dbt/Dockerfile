@@ -1,4 +1,4 @@
-FROM apache/airflow:2.8.1
+FROM apache/airflow:2.9.3
 
 RUN pip install --no-cache-dir airflow-provider-great-expectations==0.2.7 \
                                astronomer-cosmos==1.3.2 \
