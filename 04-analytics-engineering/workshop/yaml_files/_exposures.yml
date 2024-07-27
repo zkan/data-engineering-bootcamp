@@ -1,0 +1,17 @@
+version: 2
+
+exposures:
+  - name: greenery_dashboard
+    label: Greenery Dashboard
+    type: dashboard
+    maturity: high
+    url: https://bi.tool/dashboards/1  # Change to your dashboard's URL
+    description: >
+      Greenery Dashboard
+
+    depends_on:
+      - ref('conversion_rate_by_product')
+
+    owner:
+      name: Kan Ouivirach  # Change to your name
+      email: kan@odds.team  # Change to your email

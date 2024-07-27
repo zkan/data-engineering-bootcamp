@@ -1,0 +1,12 @@
+version: 2
+
+seeds:
+  - name: provinces
+    config:
+      schema: seed
+      column_types:
+        province_id: integer
+        province_name: string
+        province_lat: float
+        province_lon: float
+        province_zoom: integer
