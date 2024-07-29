@@ -14,6 +14,7 @@ RUN apt-get update && \
 
 COPY ./conf/spark-defaults.conf "$SPARK_HOME/conf/spark-defaults.conf"
 COPY ./conf/metrics.properties "$SPARK_HOME/conf/metrics.properties"
+COPY ./jars/gcs-connector-hadoop3-latest.jar "$SPARK_HOME/jars/gcs-connector-hadoop3-latest.jar"
 ENV SPARK_CONF_DIR="$SPARK_HOME/conf"
 ENV SPARK_MASTER="spark://spark-master:7077"
 ENV SPARK_MASTER_HOST spark-master
