@@ -17,6 +17,10 @@ def load_data_from_gcs_to_bigquery(gsutil_uri, source_format):
     table_id = "cultivated-list-383715.greenery.events"
     bq_table = bq_client.get_table(table_id)
 
+    # Check the write disposition in BigQuery here:
+    # https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.job.LoadJobConfig#google_cloud_bigquery_job_LoadJobConfig_write_disposition
+    # Check the time partitioning in BigQuery here:
+    # https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.job.LoadJobConfig#google_cloud_bigquery_job_LoadJobConfig_time_partitioning
     job_config = bigquery.LoadJobConfig(
         schema=bq_table.schema,
         source_format=source_format,
@@ -38,6 +42,8 @@ def load_data_from_gcs_to_bigquery(gsutil_uri, source_format):
 
 
 if __name__ == "__main__":
+    # Check the source format in BigQuery here:
+    # https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.job.LoadJobConfig#google_cloud_bigquery_job_LoadJobConfig_source_format
     print("CSV format")
     load_data_from_gcs_to_bigquery("gs://example-78147/events.csv", bigquery.SourceFormat.CSV)
     print("\n")
