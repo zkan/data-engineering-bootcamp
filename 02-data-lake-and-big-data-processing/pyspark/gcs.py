@@ -3,6 +3,7 @@ from pyspark.sql import SparkSession
 
 KEYFILE_PATH = "/opt/spark/pyspark/YOUR_KEYFILE.json"
 
+# GCS Connector Path: /opt/spark/jars/gcs-connector-hadoop3-latest.jar
 spark = SparkSession.builder.appName("demo") \
     .config("spark.jars", "https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop3-latest.jar") \
     .config("spark.memory.offHeap.enabled", "true") \
