@@ -1,0 +1,1 @@
+select 'cool@example.com' as email
