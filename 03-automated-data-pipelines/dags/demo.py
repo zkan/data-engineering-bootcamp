@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
 
-spark = SparkSession.builder.appName("demo") \
+spark = SparkSession.builder.appName("demo_airflow") \
     .config("spark.memory.offHeap.enabled", "true") \
     .config("spark.memory.offHeap.size", "5g") \
     .getOrCreate()

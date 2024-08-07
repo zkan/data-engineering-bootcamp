@@ -14,7 +14,7 @@ KEYFILE_PATH = "/opt/spark/pyspark/YOUR_KEYFILE.json"
 #     .config("google.cloud.auth.service.account.json.keyfile", KEYFILE_PATH) \
 #     .getOrCreate()
 
-spark = SparkSession.builder.appName("demo_gcs") \
+spark = SparkSession.builder.appName("demo_gcs_airflow") \
     .config("spark.memory.offHeap.enabled", "true") \
     .config("spark.memory.offHeap.size", "5g") \
     .config("fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem") \
