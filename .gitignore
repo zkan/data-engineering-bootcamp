@@ -181,6 +181,9 @@ pyrightconfig.json
 # VIM
 *.swp
 
+# Airflow
+logs/
+
 # DEB Workshop
 de-lifecycle
 
