@@ -82,7 +82,6 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/tests:/opt/airflow/tests
     - ${AIRFLOW_PROJ_DIR:-.}/pyspark:/opt/spark/pyspark
-    - ${AIRFLOW_PROJ_DIR:-.}/jars:/opt/spark/jars
     - spark-logs:/opt/spark/spark-events
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
