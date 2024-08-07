@@ -1,12 +1,9 @@
-version: '3'
-
 services:
   spark-master:
     image: spark-image
-    container_name: spark-master
     entrypoint: ['./entrypoint.sh', 'master']
     build:
-      context: .
+      context: docker
       dockerfile: Dockerfile
     ports:
       - "4040:4040"
@@ -19,8 +16,7 @@ services:
     env_file:
       - .env.spark
 
-  spark-history-server:
-    container_name: spark-history
+  spark-history:
     image: spark-image
     entrypoint: ['./entrypoint.sh', 'history']
     depends_on:

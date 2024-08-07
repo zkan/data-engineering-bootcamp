@@ -7,11 +7,14 @@ up:
 down:
 	docker compose down
 
+clean:
+	docker compose down -v
+
 bash:
 	docker compose exec -it spark-master bash
 
 submit:
-	@read -p "Enter PySpark relative path: " pyspark_path; docker exec -ti spark-master spark-submit --master spark://spark-master:7077 /opt/spark/pyspark/$$pyspark_path
+	@read -p "Enter PySpark relative path: " pyspark_path; docker compose exec -ti spark-master spark-submit --master spark://spark-master:7077 /opt/spark/pyspark/$$pyspark_path
 
 pyspark:
 	docker compose exec -it spark-master bash pyspark --master spark://spark-master:7077
