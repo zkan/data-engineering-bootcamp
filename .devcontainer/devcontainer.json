@@ -1,0 +1,5 @@
+{
+    "postAttachCommand": {
+      "poetry": ["make", "poetry"]
+    }
+  }
