@@ -20,7 +20,7 @@
 Before we run Airflow, let's create these folders first:
 
 ```sh
-mkdir -p ./dags ./config ./logs ./plugins ./tests
+mkdir -p ./dags ./config ./logs ./plugins ./tests ./spark-events
 ```
 
 On **Linux**, please make sure to configure the Airflow user for the docker-compose:
