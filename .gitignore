@@ -184,6 +184,9 @@ pyrightconfig.json
 # Airflow
 logs/
 
+# Spark
+spark-events/
+
 # DEB Workshop
 de-lifecycle
 
