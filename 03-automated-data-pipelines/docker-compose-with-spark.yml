@@ -82,7 +82,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/tests:/opt/airflow/tests
     - ${AIRFLOW_PROJ_DIR:-.}/pyspark:/opt/spark/pyspark
-    - spark-logs:/opt/spark/spark-events
+    - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -303,7 +303,7 @@ services:
       - "3000:3000"
     volumes:
       - ./pyspark:/opt/spark/pyspark
-      - spark-logs:/opt/spark/spark-events
+      - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
     env_file:
       - .env.spark
 
@@ -315,7 +315,7 @@ services:
     env_file:
       - .env.spark
     volumes:
-      - spark-logs:/opt/spark/spark-events
+      - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
     ports:
       - '18080:18080'
 
@@ -324,7 +324,7 @@ services:
     entrypoint: ['./entrypoint.sh', 'worker']
     volumes:
       - ./pyspark:/opt/spark/pyspark
-      - spark-logs:/opt/spark/spark-events
+      - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
     env_file:
       - .env.spark
 
