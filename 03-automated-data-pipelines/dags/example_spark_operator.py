@@ -34,3 +34,5 @@ with DAG(
         application="/opt/airflow/dags/demo_gcs.py",
         conn_id="my_spark",
     )
+
+    submit_demo_app >> submit_demo_gcs_app
