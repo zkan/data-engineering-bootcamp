@@ -183,3 +183,6 @@ pyrightconfig.json
 
 # DEB Workshop
 de-lifecycle
+
+# DEB dataengineercafe keyfiles
+dataengineercafe-*.json
