@@ -11,10 +11,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 USER airflow
+
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 RUN export JAVA_HOME
-
-USER airflow
 
 RUN pip install --no-cache-dir apache-airflow-providers-apache-spark==4.9.0 \
                                pyspark==3.3.2 \
@@ -23,4 +22,7 @@ RUN pip install --no-cache-dir apache-airflow-providers-apache-spark==4.9.0 \
                                dbt-core==1.8.4 \
                                dbt-bigquery==1.8.2
 
+COPY ./conf/spark-defaults.conf /home/airflow/.local/lib/python3.9/site-packages/pyspark/conf/spark-defaults.conf
+COPY ./conf/metrics.properties /home/airflow/.local/lib/python3.9/site-packages/pyspark/conf/metrics.properties
 COPY ./jars/gcs-connector-hadoop3-latest.jar /home/airflow/.local/lib/python3.9/site-packages/pyspark/jars/gcs-connector-hadoop3-latest.jar
+ENV SPARK_CONF_DIR=/home/airflow/.local/lib/python3.9/site-packages/pyspark/conf
