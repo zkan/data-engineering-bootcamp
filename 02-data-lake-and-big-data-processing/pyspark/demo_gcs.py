@@ -3,9 +3,18 @@ from pyspark.sql import SparkSession
 
 KEYFILE_PATH = "/opt/spark/pyspark/YOUR_KEYFILE.json"
 
-# GCS Connector Path: /opt/spark/jars/gcs-connector-hadoop3-latest.jar
-spark = SparkSession.builder.appName("demo") \
-    .config("spark.jars", "https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop3-latest.jar") \
+# GCS Connector Path (on Spark): /opt/spark/jars/gcs-connector-hadoop3-latest.jar
+# GCS Connector Path (on Airflow): /home/airflow/.local/lib/python3.9/site-packages/pyspark/jars/gcs-connector-hadoop3-latest.jar
+# spark = SparkSession.builder.appName("demo") \
+#     .config("spark.jars", "https://storage.googleapis.com/hadoop-lib/gcs/gcs-connector-hadoop3-latest.jar") \
+#     .config("spark.memory.offHeap.enabled", "true") \
+#     .config("spark.memory.offHeap.size", "5g") \
+#     .config("fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem") \
+#     .config("google.cloud.auth.service.account.enable", "true") \
+#     .config("google.cloud.auth.service.account.json.keyfile", KEYFILE_PATH) \
+#     .getOrCreate()
+
+spark = SparkSession.builder.appName("demo_gcs") \
     .config("spark.memory.offHeap.enabled", "true") \
     .config("spark.memory.offHeap.size", "5g") \
     .config("fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem") \

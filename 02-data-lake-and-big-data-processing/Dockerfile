@@ -3,8 +3,20 @@ FROM deltaio/delta-docker:0.8.1_2.3.0_arm64
 
 USER root
 
-COPY ./requirements.txt ./
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir great_expectations[sqlalchemy]==0.17.11 \
+                               pytest==7.4.0 \
+                               faker==19.3.0 \
+                               delta-spark==2.3.0 \
+                               sqlalchemy==2.0.20 \
+                               psycopg2-binary==2.9.7 \
+                               python-dotenv==0.21.0 \
+                               mypy==0.991 \
+                               flake8==6.0.0 \
+                               black==24.3.0 \
+                               isort==5.12.0 \
+                               notebook==6.5.4 \
+                               jupyter-server==2.11.2 \
+                               boto3==1.34.104
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
