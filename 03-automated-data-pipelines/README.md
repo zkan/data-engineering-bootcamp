@@ -7,11 +7,13 @@
 
 | Name | Description |
 | - | - |
-| `dags/` | โฟลเดอร์ที่เก็บโค้ด DAG หรือ Data Pipelines ที่เราสร้างขึ้น |
-| `plugins/` | โฟลเดอร์ที่เก็บ Plugins ของ Airflow |
-| `config/` | โฟลเดอร์ที่เก็บไฟล์ Configuration อย่างไฟล์ `airflow_local_settings.py` |
-| `tests/` | โฟลเดอร์ที่เก็บ Tests |
-| `docker-compose.yaml` | ไฟล์ Docker Compose ที่ใช้รัน Airflow ขึ้นมาบนเครื่อง |
+| `dags/` | โฟลเดอร์ที่เก็บโค้ด Airflow DAG หรือ Data Pipelines ที่เราสร้างขึ้น |
+| `docker/` | โฟลเดอร์ที่เก็บไฟล์ที่เกี่ยวกับการสร้าง Docker Image ที่ใช้ใน Workshop นี้ |
+| `pyspark/` | โฟลเดอร์ที่เก็บโค้ด Python ที่ใช้งาน PySpark |
+| `.env.spark` | ไฟล์ Environment สำหรับ Spark |
+| `docker-compose-with-spark.yml` | ไฟล์ Docker Compose ที่ใช้สำหรับรัน Airflow กับ Spark Cluster บนเครื่อง Host Machine |
+| `docker-compose.yml` | ไฟล์ Docker Compose ที่ใช้รัน Airflow ขึ้นมาบนเครื่อง |
+| `Makefile` | ไฟล์ที่ช่วยเรา Automate คำสั่งต่าง ๆ ทำความรู้จักเพิ่มเติมได้ที่ [Makefile Tutorial By Example](https://makefiletutorial.com/) |
 
 ## Starting Airflow
 
