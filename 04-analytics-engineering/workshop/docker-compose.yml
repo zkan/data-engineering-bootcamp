@@ -1,8 +1,8 @@
-version: "3.9"
+name: analytics-engineering
 
 services:
   postgres:
-    image: postgres:13
+    image: postgres:16.3
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -15,7 +15,7 @@ services:
       - 5432:5432
 
   sqlpad:
-    image: sqlpad/sqlpad:7
+    image: sqlpad/sqlpad:7.4.4
     restart: always
     depends_on:
       - postgres
