@@ -5,7 +5,9 @@ from airflow.utils import timezone
 
 
 """
-#### Connection
+# Connection
+
+## Spark
 
 Connection Id: my_spark
 Connection Type: Spark,
