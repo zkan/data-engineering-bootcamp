@@ -23,6 +23,15 @@ spark = SparkSession.builder.appName("demo_gcs") \
     .config("google.cloud.auth.service.account.json.keyfile", KEYFILE_PATH) \
     .getOrCreate()
 
+# Example schema for Greenery addresses data
+# struct_schema = StructType([
+#     StructField("address_id", StringType()),
+#     StructField("address", StringType()),
+#     StructField("zipcode", StringType()),
+#     StructField("state", StringType()),
+#     StructField("country", StringType()),
+# ])
+
 # Example schema for Greenery users data
 # struct_schema = StructType([
 #     StructField("user_id", StringType()),
