@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "networkrail-consumer"
+version = "0.1.0"
+description = ""
+authors = ["zkan <zkan.cs@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+stomp-py = "^8.1.2"
+pytz = "^2024.1"
+kafka-python = "^2.0.2"
+google-cloud-storage = "^2.18.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
