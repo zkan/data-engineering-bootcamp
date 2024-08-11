@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+from pyspark.sql.types import StructField, StructType, StringType, TimestampType
 
 
 KEYFILE_PATH = "/opt/spark/pyspark/YOUR_KEYFILE.json"
@@ -22,9 +23,32 @@ spark = SparkSession.builder.appName("demo_gcs") \
     .config("google.cloud.auth.service.account.json.keyfile", KEYFILE_PATH) \
     .getOrCreate()
 
+# Example schema for Greenery users data
+# struct_schema = StructType([
+#     StructField("user_id", StringType()),
+#     StructField("first_name", StringType()),
+#     StructField("last_name", StringType()),
+#     StructField("email", StringType()),
+#     StructField("phone_number", StringType()),
+#     StructField("created_at", TimestampType()),
+#     StructField("updated_at", TimestampType()),
+#     StructField("address_id", StringType()),
+# ])
+
 GCS_FILE_PATH = "gs://YOUR_BUCKET_PATH_TO_CSV_FILE"
-df = spark.read.option("header", True).csv(GCS_FILE_PATH)
+
+df = spark.read \
+    .option("header", True) \
+    .option("inferSchema", True) \
+    .csv(GCS_FILE_PATH)
+
+# df = spark.read \
+#     .option("header", True) \
+#     .schema(struct_schema) \
+#     .csv(GCS_FILE_PATH)
+
 df.show()
+df.printSchema()
 
 df.createOrReplaceTempView("YOUR_TABLE_NAME")
 result = spark.sql("""
