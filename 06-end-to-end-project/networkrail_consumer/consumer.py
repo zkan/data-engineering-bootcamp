@@ -11,6 +11,7 @@ from kafka import KafkaConsumer
 parser = configparser.ConfigParser()
 parser.read("upstash.conf")
 
+upstash_bootstrap_servers = parser.get("config", "upstash_bootstrap_servers")
 upstash_username = parser.get("config", "upstash_username")
 upstash_password = parser.get("config", "upstash_password")
 
@@ -20,7 +21,7 @@ DESTINATION_FOLDER = f"{BUSINESS_DOMAIN}/raw"
 
 consumer = KafkaConsumer(
     "networkrail-train-movements",
-    bootstrap_servers="YOUR_BOOTSTRAP_SERVERS",
+    bootstrap_servers=upstash_bootstrap_servers,
     sasl_mechanism="SCRAM-SHA-256",
     security_protocol="SASL_SSL",
     sasl_plain_username=upstash_username,
