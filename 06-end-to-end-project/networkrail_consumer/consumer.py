@@ -1,5 +1,6 @@
 import configparser
 import json
+from datetime import datetime
 from time import sleep
 
 from google.cloud import storage
@@ -49,8 +50,8 @@ try:
             print(data)
 
             train_id = data["train_id"]
-            actual_timestamp = data["actual_timestamp"]
-            file_name = f"{train_id}-{actual_timestamp}.json"
+            now = int(datetime.now().timestamp())
+            file_name = f"{train_id}-{now}.json"
             source_file_name = f"data/{file_name}"
             with open(source_file_name, "w") as f:
                 json.dump(data, f)
