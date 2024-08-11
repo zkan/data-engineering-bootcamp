@@ -4,6 +4,9 @@ build:
 up:
 	docker compose up -d
 
+stop:
+	docker compose stop
+
 down:
 	docker compose down
 
@@ -15,6 +18,9 @@ build_spark:
 
 up_spark:
 	docker compose -f docker-compose-with-spark.yml up -d
+
+stop_spark:
+	docker compose -f docker-compose-with-spark.yml stop
 
 down_spark:
 	docker compose -f docker-compose-with-spark.yml down
