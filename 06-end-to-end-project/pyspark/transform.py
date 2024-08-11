@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.types import BooleanType, IntegerType, LongType, StructField, StructType, StringType, TimestampType
+from pyspark.sql.types import StructField, StructType, StringType, TimestampType
 
 
 BUCKET_NAME = "YOUR_BUCKET_NAME"
@@ -16,45 +16,47 @@ spark = SparkSession.builder.appName("demo_gcs") \
     .config("google.cloud.auth.service.account.json.keyfile", KEYFILE_PATH) \
     .getOrCreate()
 
-# struct_schema = StructType([
-#     StructField("actual_timestamp", LongType()),
-#     StructField("auto_expected", BooleanType()),
-#     StructField("correction_ind", BooleanType()),
-#     StructField("delay_monitoring_point", BooleanType()),
-#     StructField("direction_ind", StringType()),
-#     StructField("division_code", IntegerType()),
-#     StructField("event_source", StringType()),
-#     StructField("event_type", StringType()),
-#     StructField("gbtt_timestamp", LongType()),
-#     StructField("line_ind", StringType()),
-#     StructField("loc_stanox", IntegerType()),
-#     StructField("next_report_run_time", IntegerType()),
-#     StructField("next_report_stanox", IntegerType()),
-#     StructField("offroute_ind", BooleanType()),
-#     StructField("planned_event_type", StringType()),
-#     StructField("planned_timestamp", LongType()),
-#     StructField("platform", IntegerType()),
-#     StructField("reporting_stanox", IntegerType()),
-#     StructField("route", IntegerType()),
-#     StructField("timetable_variation", IntegerType()),
-#     StructField("toc_id", IntegerType()),
-#     StructField("train_id", StringType()),
-#     StructField("train_service_code", IntegerType()),
-#     StructField("train_terminated", BooleanType()),
-#     StructField("variation_status", StringType()),
-# ])
+struct_schema = StructType([
+    StructField("actual_timestamp", TimestampType()),
+    StructField("auto_expected", StringType()),
+    StructField("correction_ind", StringType()),
+    StructField("current_train_id", StringType()),
+    StructField("delay_monitoring_point", StringType()),
+    StructField("direction_ind", StringType()),
+    StructField("division_code", StringType()),
+    StructField("event_source", StringType()),
+    StructField("event_type", StringType()),
+    StructField("gbtt_timestamp", TimestampType()),
+    StructField("line_ind", StringType()),
+    StructField("loc_stanox", StringType()),
+    StructField("next_report_run_time", StringType()),
+    StructField("next_report_stanox", StringType()),
+    StructField("offroute_ind", StringType()),
+    StructField("original_loc_stanox", StringType()),
+    StructField("original_loc_timestamp", TimestampType()),
+    StructField("planned_event_type", StringType()),
+    StructField("planned_timestamp", TimestampType()),
+    StructField("platform", StringType()),
+    StructField("reporting_stanox", StringType()),
+    StructField("route", StringType()),
+    StructField("timetable_variation", StringType()),
+    StructField("toc_id", StringType()),
+    StructField("train_id", StringType()),
+    StructField("train_file_address", StringType()),
+    StructField("train_service_code", StringType()),
+    StructField("train_terminated", StringType()),
+    StructField("variation_status", StringType()),
+])
 
 GCS_FILE_PATH = f"gs://{BUCKET_NAME}/{SOURCE_FOLDER}/*.json"
 
-df = spark.read \
-    .option("header", True) \
-    .option("inferSchema", True) \
-    .json(GCS_FILE_PATH)
-
 # df = spark.read \
-#     .option("header", True) \
-#     .schema(struct_schema) \
+#     .option("inferSchema", True) \
 #     .json(GCS_FILE_PATH)
+
+df = spark.read \
+    .schema(struct_schema) \
+    .json(GCS_FILE_PATH)
 
 df.show()
 df.printSchema()
