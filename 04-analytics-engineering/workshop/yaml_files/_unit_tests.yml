@@ -1,7 +1,7 @@
 version: 2
 
 unit_tests:
-  - name: test_is_valid_email_address_inline
+  - name: test_is_valid_email_address
     model: my_users
     given:
       - input: source('greenery', 'users')
@@ -11,13 +11,3 @@ unit_tests:
     expect:
       rows:
         - {email: cool@example.com}
-
-  - name: test_is_valid_email_address_with_fixture
-    model: my_users
-    given:
-      - input: source('greenery', 'users')
-        format: sql
-        fixture: users_fixture
-    expect:
-      format: csv
-      fixture: my_users_00
