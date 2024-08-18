@@ -10,7 +10,7 @@ from airflow.utils import timezone
 ## Spark
 
 Connection Id: my_spark
-Connection Type: Spark,
+Connection Type: Spark
 Host: spark://spark-master
 Port: 7077
 Deploy mode: client
