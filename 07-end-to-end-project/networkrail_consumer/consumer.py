@@ -15,9 +15,12 @@ upstash_bootstrap_servers = parser.get("config", "upstash_bootstrap_servers")
 upstash_username = parser.get("config", "upstash_username")
 upstash_password = parser.get("config", "upstash_password")
 
+GCP_PROJECT_ID = "YOUR_GCP_PROJECT_ID"
 BUCKET_NAME = "YOUR_BUCKET_NAME"
 BUSINESS_DOMAIN = "networkrail"
 DESTINATION_FOLDER = f"{BUSINESS_DOMAIN}/raw"
+KEYFILE_PATH = "YOUR_KEYFILE_PATH"
+CONSUMER_GROUP = "YOUR_CONSUMER_GROUP"
 
 consumer = KafkaConsumer(
     "networkrail-train-movements",
@@ -26,15 +29,16 @@ consumer = KafkaConsumer(
     security_protocol="SASL_SSL",
     sasl_plain_username=upstash_username,
     sasl_plain_password=upstash_password,
-    group_id="YOUR_CONSUMER_GROUP",
+    group_id=CONSUMER_GROUP,
     auto_offset_reset="earliest",
 )
 
 def upload_to_gcs(bucket_name, source_file_name, destination_blob_name):
-    keyfile = os.environ.get("KEYFILE_PATH")
+    # keyfile = os.environ.get("KEYFILE_PATH")
+    keyfile = KEYFILE_PATH
     service_account_info = json.load(open(keyfile))
     credentials = service_account.Credentials.from_service_account_info(service_account_info)
-    project_id = "YOUR_GCP_PROJECT_ID"
+    project_id = GCP_PROJECT_ID
 
     storage_client = storage.Client(
         project=project_id,
