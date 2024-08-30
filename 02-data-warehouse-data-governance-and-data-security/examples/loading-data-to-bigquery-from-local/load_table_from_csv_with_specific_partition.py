@@ -10,7 +10,7 @@ from google.oauth2 import service_account
 keyfile = os.environ.get("KEYFILE_PATH")
 service_account_info = json.load(open(keyfile))
 credentials = service_account.Credentials.from_service_account_info(service_account_info)
-project_id = "dataengineercafe"
+project_id = "YOUR_GCP_PROJECT_ID"
 client = bigquery.Client(
     project=project_id,
     credentials=credentials,
