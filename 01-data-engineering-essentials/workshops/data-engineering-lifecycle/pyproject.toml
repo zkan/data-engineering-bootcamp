@@ -2,13 +2,14 @@
 name = "data-engineering-lifecycle"
 version = "0.1.0"
 description = ""
-authors = ["zkan <zkan.cs@gmail.com>"]
+authors = ["Kan Ouivirach <zkan.cs@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.12"
+requests = "^2.32.3"
 
-[tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
