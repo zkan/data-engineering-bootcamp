@@ -41,7 +41,8 @@ file_path = "users.csv"
 df = pd.read_csv(file_path, parse_dates=["created_at", "updated_at"])
 df.info()
 
-table_id = f"{project_id}.dbt_zkan.users_df"
+dataset = "YOUR_DATASET"
+table_id = f"{project_id}.{dataset}.users_df"
 job = client.load_table_from_dataframe(df, table_id, job_config=job_config)
 job.result()
 

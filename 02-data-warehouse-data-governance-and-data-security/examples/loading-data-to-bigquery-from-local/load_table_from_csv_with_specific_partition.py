@@ -38,11 +38,12 @@ job_config = bigquery.LoadJobConfig(
 )
 
 # Ref: https://cloud.google.com/bigquery/docs/managing-partitioned-table-data
+dataset = "YOUR_DATASET"
 dt = "2020-12-07"
 file_path = f"{dt}-users.csv"
 with open(file_path, "rb") as f:
     partition = dt.replace("-", "")
-    table_id = f"{project_id}.dbt_zkan.users${partition}"
+    table_id = f"{project_id}.{dataset}.users${partition}"
     job = client.load_table_from_file(f, table_id, job_config=job_config)
     job.result()
 

@@ -37,9 +37,10 @@ job_config = bigquery.LoadJobConfig(
     clustering_fields=["first_name", "last_name"],
 )
 
+dataset = "YOUR_DATASET"
 file_path = "users.csv"
 with open(file_path, "rb") as f:
-    table_id = f"{project_id}.dbt_zkan.users"
+    table_id = f"{project_id}.{dataset}.users"
     job = client.load_table_from_file(f, table_id, job_config=job_config)
     job.result()
 
