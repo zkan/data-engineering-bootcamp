@@ -10,9 +10,8 @@ package-mode = false
 python = "^3.10"
 stomp-py = "^8.1.2"
 pytz = "^2024.1"
-kafka-python = "^2.0.2"
+kafka-python-ng = "2.2.2"
 google-cloud-storage = "^2.18.2"
-
 
 [build-system]
 requires = ["poetry-core"]
