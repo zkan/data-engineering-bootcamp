@@ -51,6 +51,30 @@ job.result()
 table = bigquery_client.get_table(table_id)
 print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
 
+data = "products"
+source_data_in_gcs = f"gs://{bucket_name}/processed/{BUSINESS_DOMAIN}/{data}/*.parquet"
+table_id = f"{project_id}.deb_bootcamp.{data}"
+job_config = bigquery.LoadJobConfig(
+    write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
+    source_format=bigquery.SourceFormat.PARQUET,
+    schema=[
+        bigquery.SchemaField("product_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("name", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("price", bigquery.SqlTypeNames.FLOAT),
+        bigquery.SchemaField("inventory", bigquery.SqlTypeNames.INTEGER),
+    ],
+)
+job = bigquery_client.load_table_from_uri(
+    source_data_in_gcs,
+    table_id,
+    job_config=job_config,
+    location=location,
+)
+job.result()
+
+table = bigquery_client.get_table(table_id)
+print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
+
 # --- Data ที่มี partition
 
 data = "users"

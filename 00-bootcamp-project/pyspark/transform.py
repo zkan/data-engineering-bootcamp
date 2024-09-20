@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructField, StructType, StringType, TimestampType
+from pyspark.sql.types import FloatType, IntegerType, StructField, StructType, StringType, TimestampType
 
 
 KEYFILE_PATH = "/opt/spark/pyspark/YOUR_KEYFILE.json"
@@ -26,6 +26,93 @@ spark = SparkSession.builder.appName("transform") \
 # --- Data ที่ไม่มี partition
 
 data = "addresses"
+GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{data}.csv"
+
+struct_schema = StructType([
+    StructField("address_id", StringType()),
+    StructField("address", StringType()),
+    StructField("zipcode", StringType()),
+    StructField("state", StringType()),
+    StructField("country", StringType()),
+])
+
+df = spark.read \
+    .option("header", True) \
+    .schema(struct_schema) \
+    .csv(GCS_FILE_PATH)
+
+df.show()
+
+df.createOrReplaceTempView(data)
+result = spark.sql(f"""
+    select
+        *
+
+    from {data}
+""")
+
+OUTPUT_PATH = f"gs://deb4-bootcamp-00/processed/greenery/{data}"
+result.write.mode("overwrite").parquet(OUTPUT_PATH)
+
+
+data = "products"
+GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{data}.csv"
+
+struct_schema = StructType([
+    StructField("product_id", StringType()),
+    StructField("name", StringType()),
+    StructField("price", FloatType()),
+    StructField("inventory", IntegerType()),
+])
+
+df = spark.read \
+    .option("header", True) \
+    .schema(struct_schema) \
+    .csv(GCS_FILE_PATH)
+
+df.show()
+
+df.createOrReplaceTempView(data)
+result = spark.sql(f"""
+    select
+        *
+
+    from {data}
+""")
+
+OUTPUT_PATH = f"gs://deb4-bootcamp-00/processed/greenery/{data}"
+result.write.mode("overwrite").parquet(OUTPUT_PATH)
+
+data = "order_items"
+GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{data}.csv"
+
+struct_schema = StructType([
+    StructField("address_id", StringType()),
+    StructField("address", StringType()),
+    StructField("zipcode", StringType()),
+    StructField("state", StringType()),
+    StructField("country", StringType()),
+])
+
+df = spark.read \
+    .option("header", True) \
+    .schema(struct_schema) \
+    .csv(GCS_FILE_PATH)
+
+df.show()
+
+df.createOrReplaceTempView(data)
+result = spark.sql(f"""
+    select
+        *
+
+    from {data}
+""")
+
+OUTPUT_PATH = f"gs://deb4-bootcamp-00/processed/greenery/{data}"
+result.write.mode("overwrite").parquet(OUTPUT_PATH)
+
+data = "promos"
 GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{data}.csv"
 
 struct_schema = StructType([
