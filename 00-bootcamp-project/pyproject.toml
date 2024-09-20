@@ -11,6 +11,7 @@ requests = "^2.32.3"
 pysftp = "^0.2.9"
 psycopg2 = "^2.9.9"
 google-cloud-bigquery = "^3.25.0"
+google-cloud-storage = "^2.18.2"
 
 [build-system]
 requires = ["poetry-core"]
