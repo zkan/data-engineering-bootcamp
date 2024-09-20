@@ -75,7 +75,89 @@ job.result()
 table = bigquery_client.get_table(table_id)
 print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
 
+data = "order_items"
+source_data_in_gcs = f"gs://{bucket_name}/processed/{BUSINESS_DOMAIN}/{data}/*.parquet"
+table_id = f"{project_id}.deb_bootcamp.{data}"
+job_config = bigquery.LoadJobConfig(
+    write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
+    source_format=bigquery.SourceFormat.PARQUET,
+    schema=[
+        bigquery.SchemaField("order_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("product_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("quantity", bigquery.SqlTypeNames.INTEGER),
+    ],
+)
+job = bigquery_client.load_table_from_uri(
+    source_data_in_gcs,
+    table_id,
+    job_config=job_config,
+    location=location,
+)
+job.result()
+
+table = bigquery_client.get_table(table_id)
+print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
+
+data = "promos"
+source_data_in_gcs = f"gs://{bucket_name}/processed/{BUSINESS_DOMAIN}/{data}/*.parquet"
+table_id = f"{project_id}.deb_bootcamp.{data}"
+job_config = bigquery.LoadJobConfig(
+    write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
+    source_format=bigquery.SourceFormat.PARQUET,
+    schema=[
+        bigquery.SchemaField("promo_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("discount", bigquery.SqlTypeNames.INTEGER),
+        bigquery.SchemaField("status", bigquery.SqlTypeNames.STRING),
+    ],
+)
+job = bigquery_client.load_table_from_uri(
+    source_data_in_gcs,
+    table_id,
+    job_config=job_config,
+    location=location,
+)
+job.result()
+
+table = bigquery_client.get_table(table_id)
+print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
+
 # --- Data ที่มี partition
+
+data = "events"
+dt = "2021-02-10"
+source_data_in_gcs = f"gs://{bucket_name}/processed/{BUSINESS_DOMAIN}/{data}/{dt}/*.parquet"
+table_id = f"{project_id}.deb_bootcamp.{data}"
+job_config = bigquery.LoadJobConfig(
+    write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
+    source_format=bigquery.SourceFormat.PARQUET,
+    schema=[
+        bigquery.SchemaField("event_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("session_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("page_url", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("created_at", bigquery.SqlTypeNames.TIMESTAMP),
+        bigquery.SchemaField("event_type", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("user_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("order_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("product_id", bigquery.SqlTypeNames.STRING),
+    ],
+    time_partitioning=bigquery.TimePartitioning(
+        type_=bigquery.TimePartitioningType.DAY,
+        field="created_at",
+    ),
+)
+
+partition = dt.replace("-", "")
+table_id = f"{project_id}.deb_bootcamp.{data}${partition}"
+job = bigquery_client.load_table_from_uri(
+    source_data_in_gcs,
+    table_id,
+    job_config=job_config,
+    location=location,
+)
+job.result()
+
+table = bigquery_client.get_table(table_id)
+print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
 
 data = "users"
 dt = "2020-10-23"
@@ -93,6 +175,48 @@ job_config = bigquery.LoadJobConfig(
         bigquery.SchemaField("created_at", bigquery.SqlTypeNames.TIMESTAMP),
         bigquery.SchemaField("updated_at", bigquery.SqlTypeNames.TIMESTAMP),
         bigquery.SchemaField("address_id", bigquery.SqlTypeNames.STRING),
+    ],
+    time_partitioning=bigquery.TimePartitioning(
+        type_=bigquery.TimePartitioningType.DAY,
+        field="created_at",
+    ),
+)
+
+partition = dt.replace("-", "")
+table_id = f"{project_id}.deb_bootcamp.{data}${partition}"
+job = bigquery_client.load_table_from_uri(
+    source_data_in_gcs,
+    table_id,
+    job_config=job_config,
+    location=location,
+)
+job.result()
+
+table = bigquery_client.get_table(table_id)
+print(f"Loaded {table.num_rows} rows and {len(table.schema)} columns to {table_id}")
+
+data = "orders"
+dt = "2021-02-10"
+source_data_in_gcs = f"gs://{bucket_name}/processed/{BUSINESS_DOMAIN}/{data}/{dt}/*.parquet"
+table_id = f"{project_id}.deb_bootcamp.{data}"
+job_config = bigquery.LoadJobConfig(
+    write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE,
+    source_format=bigquery.SourceFormat.PARQUET,
+    schema=[
+        bigquery.SchemaField("order_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("created_at", bigquery.SqlTypeNames.TIMESTAMP),
+        bigquery.SchemaField("order_cost", bigquery.SqlTypeNames.FLOAT),
+        bigquery.SchemaField("shipping_cost", bigquery.SqlTypeNames.FLOAT),
+        bigquery.SchemaField("order_total", bigquery.SqlTypeNames.FLOAT),
+        bigquery.SchemaField("tracking_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("shipping_service", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("estimated_delivery_at", bigquery.SqlTypeNames.TIMESTAMP),
+        bigquery.SchemaField("delivered_at", bigquery.SqlTypeNames.TIMESTAMP),
+        bigquery.SchemaField("status", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("user_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("promo_id", bigquery.SqlTypeNames.STRING),
+        bigquery.SchemaField("address_id", bigquery.SqlTypeNames.STRING),
+        
     ],
     time_partitioning=bigquery.TimePartitioning(
         type_=bigquery.TimePartitioningType.DAY,

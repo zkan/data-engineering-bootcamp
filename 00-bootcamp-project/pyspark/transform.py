@@ -87,11 +87,9 @@ data = "order_items"
 GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{data}.csv"
 
 struct_schema = StructType([
-    StructField("address_id", StringType()),
-    StructField("address", StringType()),
-    StructField("zipcode", StringType()),
-    StructField("state", StringType()),
-    StructField("country", StringType()),
+    StructField("order_id", StringType()),
+    StructField("product_id", StringType()),
+    StructField("quantity", IntegerType()),
 ])
 
 df = spark.read \
@@ -116,11 +114,9 @@ data = "promos"
 GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{data}.csv"
 
 struct_schema = StructType([
-    StructField("address_id", StringType()),
-    StructField("address", StringType()),
-    StructField("zipcode", StringType()),
-    StructField("state", StringType()),
-    StructField("country", StringType()),
+    StructField("promo_id", StringType()),
+    StructField("discount", IntegerType()),
+    StructField("status", StringType()),
 ])
 
 df = spark.read \
@@ -143,6 +139,39 @@ result.write.mode("overwrite").parquet(OUTPUT_PATH)
 
 # --- Data ที่มี partition
 
+data = "events"
+dt = "2021-02-10"
+GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{dt}/{data}.csv"
+
+struct_schema = StructType([
+    StructField("event_id", StringType()),
+    StructField("session_id", StringType()),
+    StructField("page_url", StringType()),
+    StructField("created_at", TimestampType()),
+    StructField("event_type", StringType()),
+    StructField("user_id", StringType()),
+    StructField("order_id", StringType()),
+    StructField("product_id", StringType()),
+])
+
+df = spark.read \
+    .option("header", True) \
+    .schema(struct_schema) \
+    .csv(GCS_FILE_PATH)
+
+df.show()
+
+df.createOrReplaceTempView(data)
+result = spark.sql(f"""
+    select
+        *
+
+    from {data}
+""")
+
+OUTPUT_PATH = f"gs://deb4-bootcamp-00/processed/greenery/{data}/{dt}"
+result.write.mode("overwrite").parquet(OUTPUT_PATH)
+
 data = "users"
 dt = "2020-10-23"
 GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{dt}/{data}.csv"
@@ -155,6 +184,44 @@ struct_schema = StructType([
     StructField("phone_number", StringType()),
     StructField("created_at", TimestampType()),
     StructField("updated_at", TimestampType()),
+    StructField("address_id", StringType()),
+])
+
+df = spark.read \
+    .option("header", True) \
+    .schema(struct_schema) \
+    .csv(GCS_FILE_PATH)
+
+df.show()
+
+df.createOrReplaceTempView(data)
+result = spark.sql(f"""
+    select
+        *
+
+    from {data}
+""")
+
+OUTPUT_PATH = f"gs://deb4-bootcamp-00/processed/greenery/{data}/{dt}"
+result.write.mode("overwrite").parquet(OUTPUT_PATH)
+
+data = "orders"
+dt = "2021-02-10"
+GCS_FILE_PATH = f"gs://deb4-bootcamp-00/raw/greenery/{data}/{dt}/{data}.csv"
+
+struct_schema = StructType([
+    StructField("order_id", StringType()),
+    StructField("created_at", TimestampType()),
+    StructField("order_cost", FloatType()),
+    StructField("shipping_cost", FloatType()),
+    StructField("order_total", FloatType()),
+    StructField("tracking_id", StringType()),
+    StructField("shipping_service", StringType()),
+    StructField("estimated_delivery_at", TimestampType()),
+    StructField("delivered_at", TimestampType()),
+    StructField("status", StringType()),
+    StructField("user_id", StringType()),
+    StructField("promo_id", StringType()),
     StructField("address_id", StringType()),
 ])
 
