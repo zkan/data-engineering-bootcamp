@@ -7,7 +7,7 @@ from pyspark.sql.types import StructField, StructType, StringType
 BUSINESS_DOMAIN = "greenery"
 BUCKET_NAME = "deb-bootcamp-YOUR_STUDENT_ID"
 DATA = "addresses"
-KEYFILE_PATH = "/opt/spark/pyspark/_gcs.json"
+KEYFILE_PATH = "YOUR_KEY_FILE_PATH"
 
 execution_date = os.getenv('EXECUTION_DATE')
 
