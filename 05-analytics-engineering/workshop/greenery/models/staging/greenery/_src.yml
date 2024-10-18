@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: greenery
+    database: crafty-hook-437603-h2
+    schema: deb_bootcamp
+    
+
+    tables:
+      - name: users
+        description: Greenery users
+      - name: events
+        description: Greenery events
+      - name: orders
+        description: Greenery orders
+      - name: addresses
+        description: Greenery addresses
+      - name: products
+        description: Greenery products
+      - name: order_items
+        description: Greenery order items
+      - name: promos
+        description: Greenery promotions
