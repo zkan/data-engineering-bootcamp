@@ -1,0 +1,12 @@
+version: 2
+
+models:
+
+  - name: int_orders_addresses__joined
+    description: Intermediate models for 
+
+  - name: int_orders_products__joined
+    description: Staging models for Greenery addresses
+
+  - name: int_products_orders__joined
+    description: Staging models for Greenery addresses

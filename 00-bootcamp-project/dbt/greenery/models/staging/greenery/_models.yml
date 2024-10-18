@@ -1,0 +1,27 @@
+version: 2
+
+models:
+
+  - name: stg_greenery__addresses
+    description: Staging models for Greenery addresses
+
+  - name: stg_greenery__events
+    description: Staging models for Greenery events
+
+  - name: stg_greenery__order_items
+    description: Staging models for Greenery order_items
+
+  - name: stg_greenery__orders
+    description: Staging models for Greenery orders
+
+  - name: stg_greenery__products
+    description: Staging models for Greenery products
+
+  - name: stg_greenery__promos
+    description: Staging models for Greenery promos
+
+  - name: stg_greenery__users
+    description: Staging models for Greenery users
+    columns:
+      - name: user_guid
+        description: User GUID
