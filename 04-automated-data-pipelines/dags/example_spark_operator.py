@@ -19,7 +19,7 @@ Spark binary: spark-submit
 
 with DAG(
     dag_id="example_spark_operator",
-    schedule_interval=None,
+    schedule=None,
     start_date=timezone.datetime(2024, 7, 30),
     catchup=False,
     tags=["spark"],
