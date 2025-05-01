@@ -1,4 +1,4 @@
-# Data Lake and Big Data Processing
+# Data Lake with Google Cloud Storage & Big Data Processing with Apache Spark
 
 เรียนรู้โครงสร้างพื้นฐานสำหรับการจัดการ Big Data โดยไม่ต้องลงทุนโครงสร้างพื้นฐาน
 ทางด้านไอทีที่มีค่าใช้จ่ายสูง ด้วยการใช้เครื่องมือบน Google Cloud Storage (GCS)

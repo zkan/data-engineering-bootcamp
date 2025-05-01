@@ -1,4 +1,4 @@
-# Data Engineering Essentials
+# Introduction to Data Engineering & Data Engineering Essentials
 
 ทำความรู้จักเครื่องมือและความรู้พื้นฐาน ในการจัดการข้อมูลต่าง ๆ ในองค์กร เพื่อให้สามารถทำงาน Data
 Engineering ได้อย่างมีประสิทธิภาพ และเข้าใจวัฏจักรของ Data Engineering ตั้งแต่ Source

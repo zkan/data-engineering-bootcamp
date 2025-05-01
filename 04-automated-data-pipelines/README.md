@@ -1,4 +1,4 @@
-# Automated Data Pipelines
+# Data Pipelines with Apache Airflow
 
 เรียนรู้การสร้าง Data Pipelines โดยใช้ Apache Airflow ตั้งแต่อ่านข้อมูล ทำความสะอาดข้อมูล
 และโหลดข้อมูลเข้า Data Lake/Data Warehouse อัตโนมัติ เพื่อนำไปวิเคราะห์ข้อมูลต่อไป

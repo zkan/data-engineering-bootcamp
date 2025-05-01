@@ -1,4 +1,4 @@
-# Data Warehouse, Data Governance and Security
+# Data Warehouse with Google BigQuery & Data Governance and Security
 
 สอนการใช้งาน BigQuery แบบครบวงจร ตั้งแต่การนำข้อมูลเข้ามาเก็บ
 การวิเคราะห์ข้อมูลและการนำไปแสดงผล เพื่อให้พร้อมทำการวิเคราะห์ข้อมูลขนาดใหญ่ได้ ทั้งข้อมูล
