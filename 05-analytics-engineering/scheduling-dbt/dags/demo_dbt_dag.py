@@ -11,7 +11,7 @@ from cosmos.profiles import PostgresUserPasswordProfileMapping
 
 Connection Id: bigquery_dbt
 Connection Type: Google Cloud
-Project Id: YOUR_PROJECT_ID
+Project Id: YOUR_GCP_PROJECT_ID
 Keyfile JSON: YOUR_SERVICE_ACCOUNT_JSON
 
 ## Postgres
