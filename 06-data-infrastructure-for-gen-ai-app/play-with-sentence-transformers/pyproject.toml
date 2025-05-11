@@ -7,7 +7,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-streamlit = "^1.45.0"
 sentence-transformers = "^4.1.0"
 
 
