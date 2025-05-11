@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "06-data-infrastructure-for-gen-ai-app"
+name = "play-with-sentence-transformers"
 version = "0.1.0"
 description = ""
 authors = ["zkan <zkan.cs@gmail.com>"]
