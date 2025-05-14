@@ -47,8 +47,8 @@ profile_config = ProfileConfig(
 
 example_dbt_project = DbtDag(
     dag_id="demo_dbt_dag",
-    schedule_interval=None,
-    start_date=timezone.datetime(2022, 11, 27),
+    schedule=None,
+    start_date=timezone.datetime(2025, 5, 1),
     catchup=False,
     project_config=ProjectConfig(DBT_PROJECT_DIR),
     profile_config=profile_config,

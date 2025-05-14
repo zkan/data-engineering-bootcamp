@@ -24,8 +24,8 @@ DBT_PROJECT_DIR = "/opt/airflow/dbt/example_dbt_project"
 
 with DAG(
     dag_id="demo_dbt_docs",
-    schedule_interval=None,
-    start_date=timezone.datetime(2024, 8, 10),
+    schedule=None,
+    start_date=timezone.datetime(2025, 5, 1),
     catchup=False,
     tags=["demo"],
 ):
@@ -39,7 +39,7 @@ with DAG(
         ),
     )
 
-    def upload_docs(project_dir):
+    def upload_docs(project_dir, **kwargs):
         import os
 
         os.system(f"cp -R {project_dir}/target {DBT_PROJECT_DIR}")
