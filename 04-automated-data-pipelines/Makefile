@@ -1,3 +1,6 @@
+setup:
+	mkdir -p ./dags ./config ./logs ./plugins ./tests ./pyspark ./spark-events
+
 build:
 	docker compose build
 
