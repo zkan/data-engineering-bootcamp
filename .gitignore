@@ -182,6 +182,7 @@ pyrightconfig.json
 *.swp
 
 # Airflow
+config/
 logs/
 
 # Spark
