@@ -16,6 +16,9 @@ down:
 clean:
 	docker compose down -v
 
+logs:
+	docker compose logs -f
+
 build_spark:
 	docker compose -f docker-compose-with-spark.yml build
 
@@ -45,3 +48,6 @@ spark-sql:
 
 notebook:
 	docker compose -f docker-compose-with-spark.yml exec spark-master bash -c "jupyter notebook --ip=0.0.0.0 --port=3000 --allow-root"
+
+logs_spark:
+	docker compose -f docker-compose-with-spark.yml logs -f
