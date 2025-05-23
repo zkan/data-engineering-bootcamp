@@ -1,5 +1,5 @@
 setup:
-	mkdir -p ./dags ./config ./logs ./plugins ./tests ./pyspark ./spark-events
+	mkdir -p ./config ./dags ./logs ./plugins ./tests ./pyspark ./spark-events
 
 build:
 	docker compose build
