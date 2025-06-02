@@ -9,15 +9,15 @@ from cosmos.profiles import PostgresUserPasswordProfileMapping
 
 ## BigQuery
 
-Connection Id: bigquery_dbt
-Connection Type: Google Cloud
+Connection ID: bigquery_dbt
+Connection Type: google_cloud_platform
 Project Id: YOUR_GCP_PROJECT_ID
 Keyfile JSON: YOUR_SERVICE_ACCOUNT_JSON
 
 ## Postgres
 
-Connection Id: postgres_dbt
-Connection Type: Postgres
+Connection ID: postgres_dbt
+Connection Type: postgres
 Host: postgres
 Database: airflow
 Login: airflow
@@ -32,7 +32,10 @@ DBT_PROJECT_DIR = "/opt/airflow/dbt/example_dbt_project"
 #     target_name="dev",
 #     profile_mapping=GoogleCloudServiceAccountDictProfileMapping(
 #         conn_id="bigquery_dbt",
-#         profile_args={"schema": "dataset_output"},
+#         profile_args={
+#             "schema": "dataset_output",
+#             "location": "asia-southeast1",
+#         },
 #     ),
 # )
 

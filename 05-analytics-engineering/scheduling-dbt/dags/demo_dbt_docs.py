@@ -12,7 +12,7 @@ from cosmos.profiles import PostgresUserPasswordProfileMapping
 ## Postgres
 
 Connection Id: postgres_dbt
-Connection Type: Postgres
+Connection Type: postgres
 Host: postgres
 Database: airflow
 Login: airflow
