@@ -11,6 +11,8 @@ dependencies = [
     "pyiceberg[pyarrow,sql-sqlite] (>=0.9.1,<0.10.0)"
 ]
 
+[tool.poetry]
+package-mode = false
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
