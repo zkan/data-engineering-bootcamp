@@ -8,6 +8,7 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "pyiceberg[pyarrow,sql-sqlite] (>=0.9.1,<0.10.0)"
 ]
 
 
