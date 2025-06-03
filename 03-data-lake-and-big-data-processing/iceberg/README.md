@@ -11,3 +11,9 @@ To create a storage directory:
 ```bash
 mkdir -p catalog
 ```
+
+To clean up the catalog:
+
+```bash
+rm -rf catalog/*
+```
