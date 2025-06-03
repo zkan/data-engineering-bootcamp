@@ -1,0 +1,4 @@
+catalog:
+  local:
+    uri: sqlite:///catalog/catalog.db
+    warehouse: file://catalog
