@@ -1,6 +1,9 @@
 import google.auth
+import pyarrow as pa
 from google.auth.transport.requests import Request
 from pyiceberg import catalog
+from pyiceberg.schema import Schema
+from pyiceberg.types import NestedField, StringType
 
 
 def get_access_token(service_account_file, scopes):
@@ -23,45 +26,51 @@ def get_access_token(service_account_file, scopes):
     return credentials
 
 
-service_account_file = "dataengineercafe-61ef403fcaf4.json"
+service_account_file = "dataengineercafe-61ef403fcaf4.json" # Replace this with your keyfile
 scopes = ["https://www.googleapis.com/auth/cloud-platform"]
 
 access_token = get_access_token(service_account_file, scopes)
-# print(access_token.token, access_token.expiry)
+# print(access_token.token)
+# print(access_token.expiry)
 
-REGISTRY_DATABASE_URI = "sqlite:///catalog/catalog.db" # replace this with your database URI
+REGISTRY_DATABASE_URI = "sqlite:///catalog/catalog_gcs.db"  # Replace this with your database URI
+GCP_PROJECT_ID = "dataengineercafe" # Replace with your GCP project ID
+GCS_BUCKET = "iceberg-tmp-zkan-123" # Replace with your GCS bucket
 
-
-catalog_inst = catalog.load_catalog(
+iceberg_catalog = catalog.load_catalog(
     "default",
     **{
         "uri": REGISTRY_DATABASE_URI,
         "py-io-impl": "pyiceberg.io.pyarrow.PyArrowFileIO",
         "gcs.oauth2.token-expires-at": access_token.expiry.timestamp(),
-        "gcs.project-id": "dataengineercafe", # replace with your gcp project id
+        "gcs.project-id": GCP_PROJECT_ID,
         "gcs.oauth2.token": access_token.token,
-        "gcs.default-bucket-location": "gs://iceberg-tmp-zkan-123", # replace with your gcs bucket
-        "warehouse": "gs://iceberg-tmp-zkan-123" # replace with your gcs bucket
+        "gcs.default-bucket-location": f"gs://{GCS_BUCKET}",
+        "warehouse": f"gs://{GCS_BUCKET}",
     }
 )
 
-import pyarrow as pa
-
-catalog_inst.create_namespace_if_not_exists("default") # Replace this with your namespace
+iceberg_catalog.create_namespace_if_not_exists("default")  # Replace this with your namespace
 
 # Define the schema for the book table
-schema = pa.schema([
-    ("title", pa.string())
-])
+schema = Schema(
+    NestedField(field_id=1, name="title", field_type=StringType(), required=True),
+    identifier_field_ids=[1],
+)
 
-# catalog_inst.drop_table("default.books") # Replace this with your table
-table = catalog_inst.create_table_if_not_exists("default.books", schema=schema)
+# iceberg_catalog.drop_table("default.books") # Replace this with your table
+iceberg_table = iceberg_catalog.create_table_if_not_exists("default.books", schema=schema)
 
-# Create some sample data
-titles = ["The Lord of the Rings", "Pride and Prejudice", "Moby Dick"]
+pa_table_data = pa.Table.from_pylist(
+    [
+        {"title": "The Lord of the Rings"},
+        {"title": "Pride and Prejudice"},
+        {"title": "Moby Dick"},
+    ],
+    schema=iceberg_table.schema().as_arrow(),
+)
 
-# Create Arrow arrays from the data
-title_array = pa.array(titles, type=pa.string())
-table_data = pa.Table.from_arrays([title_array], names=schema.names)
+# iceberg_table.append(df=pa_table_data)
+iceberg_table.upsert(df=pa_table_data)
 
-table.append(table_data)
+print(iceberg_table.scan().to_arrow().to_string(preview_cols=10))
