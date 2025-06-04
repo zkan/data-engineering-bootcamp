@@ -6,6 +6,11 @@ from pyiceberg.schema import Schema
 from pyiceberg.types import NestedField, StringType
 
 
+REGISTRY_DATABASE_URI = "sqlite:///catalog/catalog_gcs.db"  # Replace this with your database URI
+GCP_PROJECT_ID = "dataengineercafe" # Replace with your GCP project ID
+GCS_BUCKET = "iceberg-tmp-zkan-123" # Replace with your GCS bucket
+
+
 def get_access_token(service_account_file, scopes):
     """
     Retrieves an access token from Google Cloud Platform using service account credentials.
@@ -23,6 +28,7 @@ def get_access_token(service_account_file, scopes):
 
     request = Request()
     credentials.refresh(request)  # Forces token refresh if needed
+
     return credentials
 
 
@@ -32,10 +38,6 @@ scopes = ["https://www.googleapis.com/auth/cloud-platform"]
 access_token = get_access_token(service_account_file, scopes)
 # print(access_token.token)
 # print(access_token.expiry)
-
-REGISTRY_DATABASE_URI = "sqlite:///catalog/catalog_gcs.db"  # Replace this with your database URI
-GCP_PROJECT_ID = "dataengineercafe" # Replace with your GCP project ID
-GCS_BUCKET = "iceberg-tmp-zkan-123" # Replace with your GCS bucket
 
 iceberg_catalog = catalog.load_catalog(
     "default",
@@ -59,7 +61,10 @@ schema = Schema(
 )
 
 # iceberg_catalog.drop_table("default.books") # Replace this with your table
-iceberg_table = iceberg_catalog.create_table_if_not_exists("default.books", schema=schema)
+iceberg_table = iceberg_catalog.create_table_if_not_exists(
+    "default.books",    # Replace this with your table
+    schema=schema,
+)
 
 pa_table_data = pa.Table.from_pylist(
     [
