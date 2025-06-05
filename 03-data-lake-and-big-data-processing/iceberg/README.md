@@ -1,4 +1,6 @@
-# Experimenting with Apache Iceberg
+# Experimenting with Apache Iceberg, an Open Table Format using PyIceberg
+
+เวิร์คชอปสั้น ๆ สำหรับเรียนรู้การใช้งาน Apache Iceberg ผ่าน PyIceberg ในภาษา Python
 
 To install package dependencies:
 
