@@ -3,6 +3,7 @@ name = "sftp"
 version = "0.1.0"
 description = ""
 authors = ["zkan <zkan.cs@gmail.com>"]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.9"
