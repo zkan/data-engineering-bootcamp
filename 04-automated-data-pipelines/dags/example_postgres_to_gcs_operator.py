@@ -6,14 +6,13 @@ from airflow import DAG
 from airflow.providers.google.cloud.transfers.postgres_to_gcs import PostgresToGCSOperator
 
 
-# Connection Id : gcp_postgres
-# postgress ที่สร้างจาก terraform 
-# Connection Type : Postgres
-# Host : ip ที่ได้จากการรัน terraform
-# Schema : greenery
-# Login : postgres
-# Password : password
-# Port : 5432
+# Connection Id: gcp_postgres
+# Connection Type: postgres
+# Host: Server's IP
+# Schema: greenery
+# Login: postgres
+# Password: password
+# Port: 5432
 POSTGRES_CONNECTION_ID = "gcp_postgres"
 
 # Connection Id : gcp_connection
