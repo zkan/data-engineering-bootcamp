@@ -7,8 +7,9 @@ from pyiceberg.types import NestedField, StringType
 
 
 REGISTRY_DATABASE_URI = "sqlite:///catalog/catalog_gcs.db"  # Replace this with your database URI
-GCP_PROJECT_ID = "dataengineercafe" # Replace with your GCP project ID
-GCS_BUCKET = "iceberg-tmp-zkan-123" # Replace with your GCS bucket
+GCP_PROJECT_ID = "YOUR_GCP_PROJECT_ID" # Replace with your GCP project ID
+GCS_BUCKET = "YOUR_GCS_BUCKET" # Replace with your GCS bucket
+KEYFILE = "YOUR_KEYFILE_PATH" # # Replace this with your keyfile
 
 
 def get_access_token(service_account_file, scopes):
@@ -32,10 +33,8 @@ def get_access_token(service_account_file, scopes):
     return credentials
 
 
-service_account_file = "dataengineercafe-61ef403fcaf4.json" # Replace this with your keyfile
 scopes = ["https://www.googleapis.com/auth/cloud-platform"]
-
-access_token = get_access_token(service_account_file, scopes)
+access_token = get_access_token(KEYFILE, scopes)
 # print(access_token.token)
 # print(access_token.expiry)
 
