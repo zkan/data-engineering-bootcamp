@@ -10,18 +10,23 @@ from pyiceberg.transforms import DayTransform
 from pyiceberg.types import IntegerType, FloatType, NestedField, StringType, TimestampType
 
 
+# กำหนด Home Directory สำหรับ PyIceberg
 os.environ["PYICEBERG_HOME"] = os.getcwd()
 
+# โหลด Catalog ที่ชื่อ local ที่เรากำหนดในไฟล์ .pyiceberg.yaml มา
 catalog = load_catalog(name="local")
 print(catalog.properties)
 
+# สร้าง Namespace หรือ Database ที่ชื่อ transactions
 catalog.create_namespace_if_not_exists("transactions")
 
+# กำหนด Partition ของข้อมูลโดยใช้ฟิลด์ created_at (เลข ID ที่ 4)
 partition_spec = PartitionSpec(
     PartitionField(
         source_id=4, field_id=1000, transform=DayTransform(), name="created_at_day"
     )
 )
+# กำหนด Schema (หรือ Table)
 schema = Schema(
     NestedField(field_id=1, name="id", field_type=IntegerType(), required=True),
     NestedField(field_id=2, name="category", field_type=StringType(), required=True),
@@ -31,6 +36,7 @@ schema = Schema(
     # Mark id as the identifier field, also known as the primary-key
     identifier_field_ids=[1],
 )
+# สร้าง Iceberg Table จาก Schema และ Partition ที่กำหนด
 iceberg_table = catalog.create_table_if_not_exists(
     identifier="transactions.sales_data",
     schema=schema,
