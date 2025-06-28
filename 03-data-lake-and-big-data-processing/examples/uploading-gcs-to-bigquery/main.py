@@ -5,6 +5,9 @@ from google.cloud import bigquery
 from google.oauth2 import service_account
 
 
+GCS_BUCKET = "YOUR_GCS_BUCKET"
+
+
 def load_data_from_gcs_to_bigquery(gsutil_uri, source_format):
     keyfile = os.environ.get("KEYFILE_PATH")
     bq_client = bigquery.Client(
@@ -14,7 +17,7 @@ def load_data_from_gcs_to_bigquery(gsutil_uri, source_format):
     )
 
     # table_id  = project_id + dataset_id + table_name
-    table_id = "cultivated-list-383715.greenery.events"
+    table_id = "YOUR_BIGQUERY_TABLE_ID"
     bq_table = bq_client.get_table(table_id)
 
     # Check the write disposition in BigQuery here:
@@ -45,12 +48,12 @@ if __name__ == "__main__":
     # Check the source format in BigQuery here:
     # https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.job.LoadJobConfig#google_cloud_bigquery_job_LoadJobConfig_source_format
     print("CSV format")
-    load_data_from_gcs_to_bigquery("gs://example-78147/events.csv", bigquery.SourceFormat.CSV)
+    load_data_from_gcs_to_bigquery(f"gs://{GCS_BUCKET}/events.csv", bigquery.SourceFormat.CSV)
     print("\n")
 
     print("PARQUET format")
-    load_data_from_gcs_to_bigquery("gs://example-78147/events.parquet", bigquery.SourceFormat.PARQUET)
+    load_data_from_gcs_to_bigquery(f"gs://{GCS_BUCKET}/events.parquet", bigquery.SourceFormat.PARQUET)
     print("\n")
 
     print("AVRO format")
-    load_data_from_gcs_to_bigquery("gs://example-78147/events.avro", bigquery.SourceFormat.AVRO)
+    load_data_from_gcs_to_bigquery(f"gs://{GCS_BUCKET}/events.avro", bigquery.SourceFormat.AVRO)
