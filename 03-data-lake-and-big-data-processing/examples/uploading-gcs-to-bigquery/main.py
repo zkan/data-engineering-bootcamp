@@ -9,7 +9,8 @@ GCS_BUCKET = "YOUR_GCS_BUCKET"
 
 
 def load_data_from_gcs_to_bigquery(gsutil_uri, source_format):
-    keyfile = os.environ.get("KEYFILE_PATH")
+    # keyfile = os.environ.get("KEYFILE_PATH")
+    keyfile = "YOUR_KEYFILE_PATH"
     bq_client = bigquery.Client(
         credentials=service_account.Credentials.from_service_account_file(
             keyfile
