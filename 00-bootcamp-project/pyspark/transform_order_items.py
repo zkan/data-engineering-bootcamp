@@ -19,8 +19,8 @@ spark = SparkSession.builder.appName("greenery") \
     .getOrCreate()
 
 struct_schema = StructType([
-    StructField("order", StringType()),
-    StructField("product", StringType()),
+    StructField("order_id", StringType()),
+    StructField("product_id", StringType()),
     StructField("quantity", IntegerType()),
 ])
 
