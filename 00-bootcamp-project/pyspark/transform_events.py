@@ -8,8 +8,7 @@ BUCKET_NAME = "deb-bootcamp-999"
 DATA = "events"
 KEYFILE_PATH = "/opt/spark/pyspark/dataengineercafe-deb-uploading-files-to-gcs-77ed8fc646bf.json"
 
-# execution_date = os.getenv('EXECUTION_DATE')
-execution_date = "2021-02-10"
+execution_date = os.getenv("EXECUTION_DATE")
 
 spark = SparkSession.builder.appName("greenery") \
     .config("spark.memory.offHeap.enabled", "true") \
@@ -25,9 +24,9 @@ struct_schema = StructType([
     StructField("page_url", StringType()),
     StructField("created_at", TimestampType()),
     StructField("event_type", StringType()),
-    StructField("user", StringType()),
-    StructField("order", StringType()),
-    StructField("product", StringType()),
+    StructField("user_id", StringType()),
+    StructField("order_id", StringType()),
+    StructField("product_id", StringType()),
 ])
 
 GCS_FILE_PATH = f"gs://{BUCKET_NAME}/raw/{BUSINESS_DOMAIN}/{DATA}/{execution_date}/{DATA}.csv"
