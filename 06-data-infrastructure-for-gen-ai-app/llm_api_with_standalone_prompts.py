@@ -4,6 +4,10 @@ from google import genai
 from google.genai import types
 
 
+# GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
+
+
 def ask_gemini(client, model: str = "gemini-2.0-flash-001", prompt: str = ""):
     response = client.models.generate_content(
         model=model,
@@ -18,11 +22,8 @@ def ask_gemini(client, model: str = "gemini-2.0-flash-001", prompt: str = ""):
     return response.text
 
 
-# api_key = os.environ.get("GEMINI_API_KEY")
-api_key = "YOUR_GEMINI_API_KEY"
-
 # Set up a Gemini client
-client = genai.Client(api_key=api_key)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 # Standalone prompt (or prompt without context)
 question = "What are the benefits of remote work?"

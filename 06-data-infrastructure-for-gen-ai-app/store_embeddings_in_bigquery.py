@@ -6,9 +6,11 @@ from google.cloud import bigquery
 from google.oauth2 import service_account
 
 
-GCP_PROJECT_ID = "dataengineercafe"
-DATASET_ID = "deb_bootcamp"
-KEYFILE = "dataengineercafe-deb-loading-data-to-bq-secured -10ac2a6e3f37.json"
+GCP_PROJECT_ID = "YOUR_GCP_PROJECT_ID"
+DATASET_ID = "YOUR_DATASET_ID"
+KEYFILE = "YOUR_KEYFILE"
+# api_key = os.environ.get("GEMINI_API_KEY")
+GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
 
 
 def get_embedding(client, model: str = "gemini-embedding-exp-03-07", text: str = ""):
@@ -29,11 +31,8 @@ df = pd.DataFrame(data={
 })
 print(df.head())
 
-# api_key = os.environ.get("GEMINI_API_KEY")
-api_key = "YOUR_GEMINI_API_KEY"
-
 # Set up a Gemini client
-client = genai.Client(api_key=api_key)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 df["embedding"] = df.text.map(lambda x: get_embedding(client, text=x).values)
 print(df.head())
