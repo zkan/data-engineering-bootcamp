@@ -1,6 +1,6 @@
 import os
 
-import google.genai as genai
+from google import genai
 import numpy as np
 
 

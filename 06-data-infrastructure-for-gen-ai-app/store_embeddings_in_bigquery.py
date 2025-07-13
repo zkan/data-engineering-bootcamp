@@ -1,7 +1,7 @@
 import json
 
 import pandas as pd
-import google.genai as genai
+from google import genai
 from google.cloud import bigquery
 from google.oauth2 import service_account
 
