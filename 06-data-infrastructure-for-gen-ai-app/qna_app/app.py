@@ -11,6 +11,7 @@ from google.oauth2 import service_account
 
 GCP_PROJECT_ID = "YOUR_GCP_PROJECT_ID"
 DATASET_ID = "YOUR_DATASET_ID"
+TABLE_ID = ""
 KEYFILE = "YOUR_KEYFILE"
 # api_key = os.environ.get("GEMINI_API_KEY")
 GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
@@ -30,8 +31,9 @@ def ask_gemini(client, model: str = "gemini-2.0-flash-001", prompt: str = ""):
         contents=prompt,
         config=types.GenerateContentConfig(
             system_instruction=[
-                "You are a course recommender.",
-                "Your mission is to recommend courses for people who want to upskill and switch careers."
+                "You are a data analyst who works for the Greenery company.",
+                "Your mission is to summarize the Greenery data and prepare the reports for the management.",
+                "Greenery, a tech startup that delivers flowers and houseplants. You are here to grow revenue and acquire new customers!",
             ]
         ),
     )
@@ -45,7 +47,7 @@ def search_similar_texts(client, vec):
             distance
         FROM
         VECTOR_SEARCH(
-            TABLE `{DATASET_ID}.my_embeddings`,
+            TABLE `{DATASET_ID}.{TABLE_ID}`,
             'embedding',
             (select {vec} as embedding),
             top_k => 3,
