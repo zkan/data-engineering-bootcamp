@@ -10,6 +10,7 @@ from google.oauth2 import service_account
 
 GCP_PROJECT_ID = "YOUR_GCP_PROJECT_ID"
 DATASET_ID = "YOUR_DATASET_ID"
+TABLE_ID = "YOUR_TABLE_ID"
 KEYFILE = "YOUR_KEYFILE"
 # api_key = os.environ.get("GEMINI_API_KEY")
 GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
@@ -46,11 +47,11 @@ def load_data_to_bigquery(client, df):
         schema=schema,
         write_disposition="WRITE_TRUNCATE"
     )
-    table_id = f"{GCP_PROJECT_ID}.{DATASET_ID}.my_embeddings"
+    table_id = f"{GCP_PROJECT_ID}.{DATASET_ID}.{TABLE_ID}"
     load_job = client.load_table_from_dataframe(df, table_id, job_config=job_config)
     load_job.result()
 
-    print(f"Loaded {load_job.output_rows} rows into {DATASET_ID}.{table_id}")
+    print(f"Loaded {load_job.output_rows} rows into {table_id}")
 
 
 def search_similar_texts(client, vec):
@@ -60,7 +61,7 @@ def search_similar_texts(client, vec):
             distance
         FROM
         VECTOR_SEARCH(
-            TABLE `{DATASET_ID}.my_embeddings`,
+            TABLE `{DATASET_ID}.{TABLE_ID}`,
             'embedding',
             (select {vec} as embedding),
             top_k => 3,
