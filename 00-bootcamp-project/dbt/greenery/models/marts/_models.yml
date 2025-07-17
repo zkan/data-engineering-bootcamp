@@ -1,0 +1,10 @@
+version: 2
+
+models:
+
+  - name: fct_orders
+
+  - name: number_of_orders
+
+  - name: number_of_users
+    description: Number of users in Greenery

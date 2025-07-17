@@ -81,6 +81,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/tests:/opt/airflow/tests
+    - ${AIRFLOW_PROJ_DIR:-.}/dbt:/opt/airflow/dbt
     - ${AIRFLOW_PROJ_DIR:-.}/pyspark:/opt/spark/pyspark
     - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
   user: "${AIRFLOW_UID:-50000}:0"
@@ -337,43 +338,43 @@ services:
   #     airflow-init:
   #       condition: service_completed_successfully
 
-  spark-master:
-    image: spark-image
-    entrypoint: ['./entrypoint.sh', 'master']
-    build:
-      context: docker
-      dockerfile: Dockerfile-spark
-    ports:
-      - "4040:4040"
-      - "9090:8080"
-      - "7077:7077"
-      - "3000:3000"
-    volumes:
-      - ./pyspark:/opt/spark/pyspark
-      - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
-    env_file:
-      - .env.spark
+  # spark-master:
+  #   image: spark-image
+  #   entrypoint: ['./entrypoint.sh', 'master']
+  #   build:
+  #     context: docker
+  #     dockerfile: Dockerfile-spark
+  #   ports:
+  #     - "4040:4040"
+  #     - "9090:8080"
+  #     - "7077:7077"
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./pyspark:/opt/spark/pyspark
+  #     - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
+  #   env_file:
+  #     - .env.spark
 
-  spark-history:
-    image: spark-image
-    entrypoint: ['./entrypoint.sh', 'history']
-    depends_on:
-      - spark-master
-    env_file:
-      - .env.spark
-    volumes:
-      - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
-    ports:
-      - '18080:18080'
+  # spark-history:
+  #   image: spark-image
+  #   entrypoint: ['./entrypoint.sh', 'history']
+  #   depends_on:
+  #     - spark-master
+  #   env_file:
+  #     - .env.spark
+  #   volumes:
+  #     - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
+  #   ports:
+  #     - '18080:18080'
 
-  spark-worker:
-    image: spark-image
-    entrypoint: ['./entrypoint.sh', 'worker']
-    volumes:
-      - ./pyspark:/opt/spark/pyspark
-      - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
-    env_file:
-      - .env.spark
+  # spark-worker:
+  #   image: spark-image
+  #   entrypoint: ['./entrypoint.sh', 'worker']
+  #   volumes:
+  #     - ./pyspark:/opt/spark/pyspark
+  #     - ${AIRFLOW_PROJ_DIR:-.}/spark-events:/opt/spark/spark-events
+  #   env_file:
+  #     - .env.spark
 
 volumes:
   postgres-db-volume:
