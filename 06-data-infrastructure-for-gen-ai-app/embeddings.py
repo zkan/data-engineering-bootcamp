@@ -18,7 +18,7 @@ def get_embedding(client, model: str = "gemini-embedding-exp-03-07", text: str =
 # Set up a Gemini client
 client = genai.Client(api_key=GEMINI_API_KEY)
 
-# Get embeddings and find similarity
+# Get embeddings
 vec_q = get_embedding(client, text="Remote work allows employees to be more flexible and productive.").values
 vec_c = get_embedding(client, text="Work from home is very productive for me").values
 print(vec_q, vec_c)
