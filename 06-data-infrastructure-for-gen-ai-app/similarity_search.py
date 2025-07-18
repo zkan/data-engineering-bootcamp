@@ -9,7 +9,8 @@ GCP_PROJECT_ID = "YOUR_GCP_PROJECT_ID"
 DATASET_ID = "YOUR_DATASET_ID"
 TABLE_ID = "YOUR_TABLE_ID"
 KEYFILE = "YOUR_KEYFILE"
-
+# api_key = os.environ.get("GEMINI_API_KEY")
+GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
 
 def get_embedding(client, model: str = "gemini-embedding-exp-03-07", text: str = ""):
     result = client.models.embed_content(
