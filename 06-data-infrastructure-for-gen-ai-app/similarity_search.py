@@ -21,12 +21,14 @@ def get_embedding(client, model: str = "gemini-embedding-exp-03-07", text: str =
 
 service_account_info = json.load(open(KEYFILE))
 credentials = service_account.Credentials.from_service_account_info(service_account_info)
-client = bigquery.Client(
+bigquery_client = bigquery.Client(
     project=GCP_PROJECT_ID,
     credentials=credentials,
 )
 
-vec = get_embedding(client, text="QR codes systems for COVID-19.\nSimple tools for bars, restaurants, offices, and other small proximity businesses.").values
+# Set up a Gemini client
+genai_client = genai.Client(api_key=GEMINI_API_KEY)
+vec = get_embedding(genai_client, text="QR codes systems for COVID-19.\nSimple tools for bars, restaurants, offices, and other small proximity businesses.").values
 
 query = f"""
     SELECT
@@ -43,7 +45,7 @@ query = f"""
 """
 
 # Run the query
-query_job = client.query(query)
+query_job = bigquery_client.query(query)
 
 # Get the results
 results = query_job.result()
