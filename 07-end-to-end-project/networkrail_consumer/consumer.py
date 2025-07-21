@@ -9,26 +9,27 @@ from kafka import KafkaConsumer
 
 
 parser = configparser.ConfigParser()
-parser.read("upstash.conf")
+parser.read("confluent.conf")
 
-upstash_bootstrap_servers = parser.get("config", "upstash_bootstrap_servers")
-upstash_username = parser.get("config", "upstash_username")
-upstash_password = parser.get("config", "upstash_password")
+confluent_bootstrap_servers = parser.get("config", "confluent_bootstrap_servers")
+confluent_key = parser.get("config", "confluent_key")
+confluent_secret = parser.get("config", "confluent_secret")
 
 GCP_PROJECT_ID = "YOUR_GCP_PROJECT_ID"
 BUCKET_NAME = "YOUR_BUCKET_NAME"
 BUSINESS_DOMAIN = "networkrail"
 DESTINATION_FOLDER = f"{BUSINESS_DOMAIN}/raw"
 KEYFILE_PATH = "YOUR_KEYFILE_PATH"
+TOPIC = "networkrail-train-movements"
 CONSUMER_GROUP = "YOUR_CONSUMER_GROUP"
 
 consumer = KafkaConsumer(
-    "networkrail-train-movements",
-    bootstrap_servers=upstash_bootstrap_servers,
-    sasl_mechanism="SCRAM-SHA-256",
+    TOPIC,
+    bootstrap_servers=confluent_bootstrap_servers,
+    sasl_mechanism="PLAIN",
     security_protocol="SASL_SSL",
-    sasl_plain_username=upstash_username,
-    sasl_plain_password=upstash_password,
+    sasl_plain_username=confluent_key,
+    sasl_plain_password=confluent_secret,
     group_id=CONSUMER_GROUP,
     auto_offset_reset="earliest",
 )
