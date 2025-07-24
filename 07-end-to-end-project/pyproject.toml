@@ -1,15 +1,16 @@
 [tool.poetry]
-name = "06-end-to-end-project"
+name = "07-end-to-end-project"
 version = "0.1.0"
 description = ""
 authors = ["zkan <zkan.cs@gmail.com>"]
 readme = "README.md"
-packages = [{include = "06_end_to_end_project"}]
+packages = [{include = "07_end_to_end_project"}]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
-dbt-core = "1.8.4"
-dbt-bigquery = "1.8.2"
+dbt-core = "^1.9.6"
+dbt-bigquery = "^1.9.2"
 
 
 [build-system]
