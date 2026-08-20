@@ -12,7 +12,7 @@ requests = "^2.32.3"
 pysftp = "^0.2.9"
 psycopg2 = "^2.9.9"
 paramiko = ">=3,<4"
-
+google-cloud-bigquery = "^3.34.0"
 
 [build-system]
 requires = ["poetry-core"]
