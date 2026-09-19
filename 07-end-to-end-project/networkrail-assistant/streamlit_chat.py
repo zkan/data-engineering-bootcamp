@@ -91,8 +91,8 @@ async def ask_gemini(prompt: str, history: list[types.Content]) -> tuple[str, li
                 )
 
 
-st.set_page_config(page_title="BigQuery Chat for NetworkRail Movements", page_icon="📊")
-st.title("📊 BigQuery Chat for NetworkRail Movements")
+st.set_page_config(page_title="BigQuery Chat for Network Rail Movements", page_icon="📊")
+st.title("📊 BigQuery Chat for Network Rail Movements")
 st.caption("Gemini can query only the MCP server's permitted table.")
 
 if "messages" not in st.session_state:
@@ -105,7 +105,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("Ask about networkrail movements (e.g., 'Show me the last 5 movements')"):
+if prompt := st.chat_input("Ask about network rail movements (e.g., 'Show me the last 5 movements')"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("user"):

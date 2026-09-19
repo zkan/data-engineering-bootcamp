@@ -6,7 +6,6 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 
 
-MODEL = "gemini-3.1-flash-lite"
 SERVER_FILE = Path(__file__).with_name("bigquery_mcp.py")
 
 
